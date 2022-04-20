@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="Background">
+    <file>IMAGENES/FONDO_INICIO.jpg</file>
+  </qresource>
+  <qresource prefix="Graficas">
+    <file>IMAGENES/Gafica</file>
+  </qresource>
+</RCC>
