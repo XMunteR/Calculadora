@@ -15,7 +15,7 @@ from tabulate import tabulate
 from scipy.misc import derivative
 #from CALCULADORA.Graficador import funcion
 from numpy.random import uniform as unif 
-import Graficador,CalcTrapecio,Rectangulo
+import Graficador,CalcTrapecio,Rectangulo,calculadora_newton
 
 
 
@@ -837,7 +837,7 @@ def NewtonRapshon():
         x1 = PtoInicial - Ff(PtoInicial) / Dff(PtoInicial)
         PtoInicial = x1
 
-        result2.append[PtoInicial]
+        result2.append([PtoInicial])
         contador += 1
     if (contador==199):
         Newton.ResultRaizNewton.setText(str("No se logro encontrar la raiz"))
@@ -1161,8 +1161,14 @@ def gui_BackNewton():
     Choose.show()
 
 def Btn_NewtonCalculate():
-    NewtonRapshon()
-    
+    ''' NewtonRapshon() '''
+    str_ecuacion = Newton.FunEntry.toPlainText()
+    puntoInicio =float  (Newton.PtoIniEntry.toPlainText())
+    toler = float (Newton.TolEntry.toPlainText())
+    calculadora_newton.newtonR(str_ecuacion,puntoInicio,toler)
+    Newton.ResultRaizNewton.setText(str(calculadora_newton.raiz))
+    Newton.ResultRaizNewton_2.setText(str(calculadora_newton.error))
+    Newton.ResultInterNewton.setText(str(calculadora_newton.contador))
     
 
 def gui_Biseccion():
