@@ -880,8 +880,8 @@ def CalcRectangulo():
     n       =  (Rectangulos.ParticionesEntry.toPlainText())  
     Rectangulo.rectangulo(funcion,a,b,n)
     ''' Rectangulos.ExtDerReect.setText() '''
-    Rectangulos.ExtIzqReect.setText(str(Rectangulo.suma))
-    Rectangulos.ProMediorect.setText(str(Rectangulo.suma2))
+    Rectangulos.ExtIzqReect.setText(str(Rectangulo.suma2))
+    Rectangulos.ProMediorect.setText(str(Rectangulo.suma))
 
 
 def evaluacion (x):
