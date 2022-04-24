@@ -16,7 +16,7 @@ from scipy.misc import derivative
 #from CALCULADORA.Graficador import funcion
 from numpy.random import uniform as unif
 
-import Graficador,CalcTrapecio,Rectangulo,calculadora_newton
+import Graficador,CalcTrapecio,Rectangulo,calculadora_newton,simpson38
 
 
 
@@ -865,40 +865,13 @@ def CTrapecio():
     ''' x = symbols('x')
     fx =  lambda x: np.sqrt(x) * np.sin(x) '''
     Funcion      = str(Trapecio.FuncionEntry.toPlainText())
-    f = sympify(Funcion)
-    ExtSup       = int(Trapecio.ExtDerEntry.toPlainText()) #a
-    ExtInf       = int(Trapecio.ExtIzqEntry.toPlainText())#b
+    a            = int(Trapecio.ExtIzqEntry.toPlainText())
+    b            = int(Trapecio.ExtDerEntry.toPlainText()) 
     Particiones  = int(Trapecio.ParticionesEntry.toPlainText())
+    CalcTrapecio.ecuacion(Funcion,a,b,Particiones)
+    Trapecio.ResultIntegral.setText(str(CalcTrapecio.area))
+    Trapecio.ResultError.setText(str(CalcTrapecio.error))
     
-    '''
-    #Calculamos las segunda derivada
-    derivada1 = sympy.diff(Funcion)
-    derivada2 = sympy.diff(derivada1)
-
-    h = (ExtSup-ExtInf)/Particiones
-    s = 0
-    n = 0
-    a_evaluado = 0
-    b_evaluado = 0
-
-    for i in range (1,Particiones):
-        n = ExtSup + (i+h)
-        n_evaluado = f.evalf(subs = {"x" : n})
-        s = s + n_evaluado
-    
-    a_evaluado = f.evalf(subs = {"x" : ExtSup})
-    b_evaluado = f.evalf(subs = {"x" : ExtInf})
-    integral =  h/2 * (a_evaluado +2*s + b_evaluado)
-
-
-    Error = 0
-    k = np.random.uniform(ExtSup,ExtInf+1)
-    z = float(ExtSup+(k*ExtSup-ExtInf))
-    Error = -((h)**3/12)*(derivada2*z)
-
-    
-    Trapecio.ResultIntegral.setText(str(integral))
-    Trapecio.ResultError.setText(str(Error)) '''
 
 def CalcRectangulo():
     funcion = (Rectangulos.FuncionEntry.toPlainText())
@@ -963,35 +936,13 @@ def evaluacion1 (x):
 
 def CSimpson38():
 
-    funcion = list (Simpson38.FuncionEntry.toPlainText())
+    funcion = str (Simpson38.FuncionEntry.toPlainText())
     a       = float(Simpson38.ExtIzqEntry.toPlainText())
     b       = float(Simpson38.ExtDerEntry.toPlainText())
     n       = int  (Simpson38.ParticionesEntry.toPlainText())
-
-    expr = "".join(funcion)
-    f = sympify(expr)
-    derivada1 = sympy.diff(f)
-    derivada2 = sympy.diff(derivada1)
-    
-    h = (b-a)/n 
-    total = 0
-
-    for i in range (1,n):
-        x = a + (i*h)
-        if (i%2==0):
-            total+=2*evaluacion1(x)
-        else:
-            total+=4*evaluacion1(x)
-    total =(evaluacion1(a)+evaluacion1(b))
-    total = total*((3/8)*h)
-
-    error = 0
-    k = np.random.uniform (a,b+1)
-    z = float(a+(k*a-b))
-    error = -(((h)**3/12)*(derivada2*(z)))
-
-    Simpson38.ResultIntegral.setText(str(total))
-    Simpson38.ResultError.setText(str(error))
+    simpson38.ecuacion(funcion,a,b,n)
+    Simpson38.ResultIntegral.setText(str(simpson38.suma))
+    Simpson38.ResultError.setText(str(simpson38.errorporcent))
 
 def montecarlo():
     Funcion = list (Montecarlo.FuncionEntry.toPlainText())
