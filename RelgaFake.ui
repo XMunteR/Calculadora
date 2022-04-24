@@ -136,8 +136,8 @@ color:white;</string>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>270</y>
+      <x>400</x>
+      <y>260</y>
       <width>101</width>
       <height>41</height>
      </rect>
@@ -153,10 +153,10 @@ color:white;</string>
    <widget class="QLabel" name="ResultFake">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>510</x>
       <y>250</y>
-      <width>671</width>
-      <height>121</height>
+      <width>351</width>
+      <height>231</height>
      </rect>
     </property>
     <property name="maximumSize">
@@ -166,7 +166,7 @@ color:white;</string>
      </size>
     </property>
     <property name="styleSheet">
-     <string notr="true">font:5pt&quot;Arial&quot;;
+     <string notr="true">font:10pt&quot;Arial&quot;;
 color:white;</string>
     </property>
     <property name="text">
@@ -284,8 +284,8 @@ border-radius:20px;</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>390</y>
+      <x>40</x>
+      <y>270</y>
       <width>51</width>
       <height>41</height>
      </rect>
@@ -301,8 +301,8 @@ color:white;</string>
    <widget class="QLabel" name="ResultRaiz">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>390</y>
+      <x>100</x>
+      <y>270</y>
       <width>281</width>
       <height>41</height>
      </rect>
@@ -317,8 +317,8 @@ color:white;</string>
    <widget class="QLabel" name="ResultError">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>450</y>
+      <x>100</x>
+      <y>330</y>
       <width>281</width>
       <height>41</height>
      </rect>
@@ -333,8 +333,8 @@ color:white;</string>
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>450</y>
+      <x>40</x>
+      <y>330</y>
       <width>51</width>
       <height>41</height>
      </rect>

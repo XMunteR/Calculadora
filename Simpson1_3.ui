@@ -239,8 +239,8 @@ font:20px&quot;impact&quot;</string>
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>370</y>
+      <x>140</x>
+      <y>390</y>
       <width>51</width>
       <height>41</height>
      </rect>
@@ -256,8 +256,8 @@ color:white;</string>
    <widget class="QLabel" name="ResultError">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>370</y>
+      <x>200</x>
+      <y>390</y>
       <width>371</width>
       <height>41</height>
      </rect>
@@ -276,7 +276,7 @@ color:white;</string>
       <x>210</x>
       <y>290</y>
       <width>431</width>
-      <height>31</height>
+      <height>91</height>
      </rect>
     </property>
     <property name="styleSheet">

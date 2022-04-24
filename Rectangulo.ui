@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>700</width>
+    <width>741</width>
     <height>500</height>
    </rect>
   </property>
@@ -104,7 +104,7 @@ border-radius:20px;</string>
      <rect>
       <x>30</x>
       <y>290</y>
-      <width>171</width>
+      <width>161</width>
       <height>41</height>
      </rect>
     </property>
@@ -113,7 +113,7 @@ border-radius:20px;</string>
 color:white;</string>
     </property>
     <property name="text">
-     <string>Valor de la integral:</string>
+     <string>Extremo derecho: </string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -236,44 +236,10 @@ font:20px&quot;impact&quot;</string>
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
+   <widget class="QLabel" name="ExtDerReect">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>380</y>
-      <width>51</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font:15pt&quot;Arial&quot;;
-color:white;</string>
-    </property>
-    <property name="text">
-     <string>Error:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="ResultError">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>380</y>
-      <width>371</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font:15pt&quot;Arial&quot;;
-color:white;</string>
-    </property>
-    <property name="text">
-     <string>...</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="ResultIntegral">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
+      <x>200</x>
       <y>290</y>
       <width>431</width>
       <height>31</height>
@@ -305,6 +271,80 @@ border-radius:20px;</string>
     </property>
     <property name="text">
      <string>Graficar</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ExtIzqReect">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>340</y>
+      <width>431</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font:20px&quot;impact&quot;</string>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>340</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font:15pt&quot;Arial&quot;;
+color:white;</string>
+    </property>
+    <property name="text">
+     <string>Extremo izquierdo: </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>390</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font:15pt&quot;Arial&quot;;
+color:white;</string>
+    </property>
+    <property name="text">
+     <string>Pto medio: </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ProMediorect">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>390</y>
+      <width>431</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font:20px&quot;impact&quot;</string>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>

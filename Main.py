@@ -14,7 +14,8 @@ from numpy.polynomial import Polynomial as P
 from tabulate import tabulate
 from scipy.misc import derivative
 #from CALCULADORA.Graficador import funcion
-from numpy.random import uniform as unif 
+from numpy.random import uniform as unif
+
 import Graficador,CalcTrapecio,Rectangulo,calculadora_newton
 
 
@@ -47,7 +48,7 @@ Simpson13 = uic.loadUi("Simpson1_3.ui")
 Simpson38 = uic.loadUi("Simpson3_8.ui")
 Graficadora = uic.loadUi("Graficador.ui")
 Montecarlo = uic.loadUi("Montecarlo.ui")
-Rectangulo = uic.loadUi("Rectangulo.ui")
+Rectangulos = uic.loadUi("Rectangulo.ui")
 #FUNCIONES  
 
     #Funcion para separar Entero y Fraccional
@@ -706,7 +707,7 @@ def ReglaFalsa():
 def Derivada():
     x = symbols('x')
     Funcion = Derivadas.FunEntry.toPlainText()
-    f=str(++Funcion)
+    f=str(Funcion)
        
     derivada = diff(f,x)
     derivada2 = diff(derivada)
@@ -869,7 +870,7 @@ def CTrapecio():
     ExtInf       = int(Trapecio.ExtIzqEntry.toPlainText())#b
     Particiones  = int(Trapecio.ParticionesEntry.toPlainText())
     
-
+    '''
     #Calculamos las segunda derivada
     derivada1 = sympy.diff(Funcion)
     derivada2 = sympy.diff(derivada1)
@@ -897,14 +898,17 @@ def CTrapecio():
 
     
     Trapecio.ResultIntegral.setText(str(integral))
-    Trapecio.ResultError.setText(str(Error))
+    Trapecio.ResultError.setText(str(Error)) '''
 
 def CalcRectangulo():
-    funcion = (Rectangulo.FuncionEntry.toPlainText())
-    a       = (Rectangulo.ExtIzqEntry.toPlainText())
-    b       = (Rectangulo.ExtDerEntry.toPlainText())
-    n       =  (Rectangulo.ParticionesEntry.toPlainText())  
+    funcion = (Rectangulos.FuncionEntry.toPlainText())
+    a       = (Rectangulos.ExtIzqEntry.toPlainText())
+    b       = (Rectangulos.ExtDerEntry.toPlainText())
+    n       =  (Rectangulos.ParticionesEntry.toPlainText())  
     Rectangulo.rectangulo(funcion,a,b,n)
+    ''' Rectangulos.ExtDerReect.setText() '''
+    Rectangulos.ExtIzqReect.setText(str(Rectangulo.suma))
+    Rectangulos.ProMediorect.setText(str(Rectangulo.suma2))
 
 
 def evaluacion (x):
@@ -1284,6 +1288,7 @@ def gui_Graficadora():
 def gui_ButtonGraficadora():
     ecuacion=Graficadora.GraphEntry.toPlainText()
     Graficador.funcion(ecuacion)
+    
 
 def gui_BackButtonGraficadora():
     Graficadora.close()
@@ -1302,13 +1307,13 @@ def gui_BackBtnMontecarlo():
 
 def gui_Rectangulo():
     Choose.close()
-    Rectangulo.show()
+    Rectangulos.show()
 
 def Btn_CalculateRectangulo():
     CalcRectangulo()
 
 def gui_BackBtnRectangulo():
-    Rectangulo.close()
+    Rectangulos.close()
     Choose.show()
 
 
@@ -1411,8 +1416,8 @@ Graficadora.GraphButton.clicked.connect(gui_ButtonGraficadora)
 Montecarlo.MontCalculateButton.clicked.connect(Btn_CalculateMontecarlo)
 Montecarlo.MontBackButton.clicked.connect(gui_BackBtnMontecarlo)
 
-Rectangulo.RecCalculateButton.clicked.connect(Btn_CalculateRectangulo)
-Rectangulo.RectBackButton.clicked.connect(gui_BackBtnRectangulo)
+Rectangulos.RecCalculateButton.clicked.connect(Btn_CalculateRectangulo)
+Rectangulos.RectBackButton.clicked.connect(gui_BackBtnRectangulo)
 
 #Exectue
 Main.show()
