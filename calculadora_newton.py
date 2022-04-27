@@ -36,7 +36,7 @@ def raizR(x0,tolerancia):
 
     result1  = "#     Raiz"
 
-    while (abs(f(x0)) > tolerancia and contador < 199):
+    while (abs(f(x0)) > tolerancia and contador < 1000):
 
         x1 = x0 - f(x0) / Df(x0)
         x0 = x1
