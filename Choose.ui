@@ -315,6 +315,22 @@ border-radius:20px;</string>
      <string>integración Rectangulos</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="MatrixButton">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>460</y>
+      <width>291</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font:37px;</string>
+    </property>
+    <property name="text">
+     <string>Matrices </string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources>
