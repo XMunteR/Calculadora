@@ -16,7 +16,7 @@ from scipy.misc import derivative
 #from CALCULADORA.Graficador import funcion
 from numpy.random import uniform as unif
 
-import Graficador,CalcTrapecio,Rectangulo,calculadora_newton,simpson38
+import Graficador,CalcTrapecio,Rectangulo,calculadora_newton,simpson38,Determinante
 
 
 
@@ -49,6 +49,7 @@ Simpson38 = uic.loadUi("Simpson3_8.ui")
 Graficadora = uic.loadUi("Graficador.ui")
 Montecarlo = uic.loadUi("Montecarlo.ui")
 Rectangulos = uic.loadUi("Rectangulo.ui")
+#MatrixSimple = uic.loadUi("MatrisesSimple")
 #FUNCIONES  
 
     #Funcion para separar Entero y Fraccional
@@ -874,14 +875,14 @@ def CTrapecio():
     
 
 def CalcRectangulo():
-    funcion = (Rectangulos.FuncionEntry.toPlainText())
-    a       = (Rectangulos.ExtIzqEntry.toPlainText())
-    b       = (Rectangulos.ExtDerEntry.toPlainText())
-    n       =  (Rectangulos.ParticionesEntry.toPlainText())  
-    Rectangulo.rectangulo(funcion,a,b,n)
-    ''' Rectangulos.ExtDerReect.setText() '''
-    Rectangulos.ExtIzqReect.setText(str(Rectangulo.suma2))
-    Rectangulos.ProMediorect.setText(str(Rectangulo.suma))
+    funcion = str(Rectangulos.FuncionEntry.toPlainText())
+    a       = int(Rectangulos.ExtIzqEntry.toPlainText())
+    b       = int(Rectangulos.ExtDerEntry.toPlainText())
+    n       = int(Rectangulos.ParticionesEntry.toPlainText())  
+    Rectangulo.ecu(funcion,a,b,n)
+    Rectangulos.ExtIzqReect.setText(str(Rectangulo.left_riemann_sum))
+    Rectangulos.ProMediorect.setText(str(Rectangulo.midpoint_riemann_sum))
+    Rectangulos.ExtDerReect.setText(str(Rectangulo.right_riemann_sum))
 
 
 def evaluacion (x):
@@ -967,6 +968,17 @@ def montecarlo():
     resultado = (b-a)*suma/n 
 
     Montecarlo.ResultIntegral.setText(str(resultado))
+
+''' def MatrixDeterminante():
+    num1 = str(MatrixSimple.num1Entry.setText())
+    num2 = str(MatrixSimple.num2Entry.setText())
+    num3 = str(MatrixSimple.num3Entry.setText())
+    num4 = str(MatrixSimple.num4Entry.setText())
+    num5 = str(MatrixSimple.num5Entry.setText())
+    num6 = str(MatrixSimple.num6Entry.setText())
+    num7 = str(MatrixSimple.num7Entry.setText())
+    num8 = str(MatrixSimple.num8Entry.setText())
+    num9 = str(MatrixSimple.num9Entry.setText()) '''
 
 
 
