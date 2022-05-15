@@ -49,7 +49,8 @@ Simpson38 = uic.loadUi("Simpson3_8.ui")
 Graficadora = uic.loadUi("Graficador.ui")
 Montecarlo = uic.loadUi("Montecarlo.ui")
 Rectangulos = uic.loadUi("Rectangulo.ui")
-#MatrixSimple = uic.loadUi("MatrisesSimple")
+MatrixSimple = uic.loadUi("MatrisesSimple.ui")
+ChooseMatriz = uic.loadUi("MatricesChoose.ui")
 #FUNCIONES  
 
     #Funcion para separar Entero y Fraccional
@@ -969,16 +970,18 @@ def montecarlo():
 
     Montecarlo.ResultIntegral.setText(str(resultado))
 
-''' def MatrixDeterminante():
-    num1 = str(MatrixSimple.num1Entry.setText())
-    num2 = str(MatrixSimple.num2Entry.setText())
-    num3 = str(MatrixSimple.num3Entry.setText())
-    num4 = str(MatrixSimple.num4Entry.setText())
-    num5 = str(MatrixSimple.num5Entry.setText())
-    num6 = str(MatrixSimple.num6Entry.setText())
-    num7 = str(MatrixSimple.num7Entry.setText())
-    num8 = str(MatrixSimple.num8Entry.setText())
-    num9 = str(MatrixSimple.num9Entry.setText()) '''
+def MatrixDeterminante():
+    num1 = float(MatrixSimple.num1Entry.toPlainText())
+    num2 = float(MatrixSimple.num2Entry.toPlainText())
+    num3 = float(MatrixSimple.num3Entry.toPlainText())
+    num4 = float(MatrixSimple.num4Entry.toPlainText())
+    num5 = float(MatrixSimple.num5Entry.toPlainText())
+    num6 = float(MatrixSimple.num6Entry.toPlainText())
+    num7 = float(MatrixSimple.num7Entry.toPlainText())
+    num8 = float(MatrixSimple.num8Entry.toPlainText())
+    num9 = float(MatrixSimple.num9Entry.toPlainText())
+    Determinante.matricesDeterminante(num1,num2,num3,num4,num5,num6,num7,num8,num9)
+    MatrixSimple.ResultMatrix.setText(str(Determinante.result))
 
 
 
@@ -1279,6 +1282,24 @@ def gui_BackBtnRectangulo():
     Rectangulos.close()
     Choose.show()
 
+def gui_matrices():
+    Choose.close()
+    ChooseMatriz.show()
+
+def gui_BackbtnMatriz():
+    ChooseMatriz.close()
+    Choose.show()
+
+def gui_Matricez1op():
+    ChooseMatriz.close()
+    MatrixSimple.show()
+
+def gui_backMatricez1op():
+    MatrixSimple.close()
+    ChooseMatriz.show()
+
+def Btn_1Matricez():
+    MatrixDeterminante()
 
 
 #Main BUtton Link
@@ -1304,7 +1325,7 @@ Choose.Simpson38Button.clicked.connect(gui_Simpson38)
 Choose.GraphButton.clicked.connect(gui_Graficadora)
 Choose.MontecarloButton.clicked.connect(gui_Montecarlo)
 Choose.RectanguloButton.clicked.connect(gui_Rectangulo)
-
+Choose.MatrixButton.clicked.connect(gui_matrices)
 
 #Bases Buttons Link
 Bases.BasesBackButton.clicked.connect(gui_BackBtnBases)
@@ -1381,6 +1402,19 @@ Montecarlo.MontBackButton.clicked.connect(gui_BackBtnMontecarlo)
 
 Rectangulos.RecCalculateButton.clicked.connect(Btn_CalculateRectangulo)
 Rectangulos.RectBackButton.clicked.connect(gui_BackBtnRectangulo)
+
+ChooseMatriz.ChoseMaBackButton.clicked.connect(gui_BackbtnMatriz)
+ChooseMatriz.btnOpSimples.clicked.connect(gui_Matricez1op)
+
+MatrixSimple.MatBackButton.clicked.connect(gui_backMatricez1op)
+
+MatrixSimple.DetCalculButton.clicked.connect(Btn_1Matricez)
+
+
+
+
+
+
 
 #Exectue
 Main.show()

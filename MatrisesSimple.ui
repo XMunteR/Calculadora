@@ -65,7 +65,7 @@ font: 50pt &quot;Impact&quot;;
      <string>Matrices</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="RectBackButton">
+   <widget class="QPushButton" name="MatBackButton">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -112,7 +112,7 @@ border-radius:20px;</string>
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="BisGraficarButton">
+   <widget class="QPushButton" name="DetCalculButton">
     <property name="geometry">
      <rect>
       <x>300</x>
@@ -236,9 +236,9 @@ border-radius:20px;</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>120</x>
       <y>80</y>
-      <width>101</width>
+      <width>71</width>
       <height>41</height>
      </rect>
     </property>
@@ -248,7 +248,7 @@ font: 20pt &quot;Impact&quot;;
 </string>
     </property>
     <property name="text">
-     <string>Matriz A</string>
+     <string>Matriz </string>
     </property>
    </widget>
    <widget class="QPushButton" name="RecCalculateButton_2">
