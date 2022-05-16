@@ -384,6 +384,12 @@ border-radius:20px;</string>
       <height>131</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font{
+20px;
+arial;
+}</string>
+    </property>
     <property name="text">
      <string>...</string>
     </property>

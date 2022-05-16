@@ -49,8 +49,10 @@ Simpson38 = uic.loadUi("Simpson3_8.ui")
 Graficadora = uic.loadUi("Graficador.ui")
 Montecarlo = uic.loadUi("Montecarlo.ui")
 Rectangulos = uic.loadUi("Rectangulo.ui")
-MatrixSimple = uic.loadUi("MatrisesSimple.ui")
+MatrixSimple = uic.loadUi("MatrisesSimple2x2.ui")
+MatrixSimple3x3 = uic.loadUi("MatrisesSimple3x3.ui")
 ChooseMatriz = uic.loadUi("MatricesChoose.ui")
+MatricesChooseLong = uic.loadUi("MatricesChooseLong.ui")
 #FUNCIONES  
 
     #Funcion para separar Entero y Fraccional
@@ -973,15 +975,27 @@ def montecarlo():
 def MatrixDeterminante():
     num1 = float(MatrixSimple.num1Entry.toPlainText())
     num2 = float(MatrixSimple.num2Entry.toPlainText())
-    num3 = float(MatrixSimple.num3Entry.toPlainText())
+  
     num4 = float(MatrixSimple.num4Entry.toPlainText())
     num5 = float(MatrixSimple.num5Entry.toPlainText())
-    num6 = float(MatrixSimple.num6Entry.toPlainText())
-    num7 = float(MatrixSimple.num7Entry.toPlainText())
-    num8 = float(MatrixSimple.num8Entry.toPlainText())
-    num9 = float(MatrixSimple.num9Entry.toPlainText())
-    Determinante.matricesDeterminante(num1,num2,num3,num4,num5,num6,num7,num8,num9)
-    MatrixSimple.ResultMatrix.setText(str(Determinante.result))
+   
+    Determinante.matricesDeterminante2x2(num1,num2,num4,num5)
+    MatrixSimple.ResultMatrix.setText(str(Determinante.result1))
+
+
+def MatrixDeterminante3x3():
+    num1 = float(MatrixSimple3x3.num1Entry.toPlainText())
+    num2 = float(MatrixSimple3x3.num2Entry.toPlainText())
+    num3 = float(MatrixSimple3x3.num3Entry.toPlainText())
+    num4 = float(MatrixSimple3x3.num4Entry.toPlainText())
+    num5 = float(MatrixSimple3x3.num5Entry.toPlainText())
+    num6 = float(MatrixSimple3x3.num6Entry.toPlainText())
+    num7 = float(MatrixSimple3x3.num7Entry.toPlainText())
+    num8 = float(MatrixSimple3x3.num8Entry.toPlainText())
+    num9 = float(MatrixSimple3x3.num9Entry.toPlainText())
+    Determinante.matricesDeterminante3x3(num1,num2,num3,num4,num5,num6,num7,num8,num9)
+    
+    MatrixSimple3x3.ResultMatrix.setText(str(Determinante.result2))
 
 
 
@@ -1290,6 +1304,27 @@ def gui_BackbtnMatriz():
     ChooseMatriz.close()
     Choose.show()
 
+#longitud de matricez
+def gui_LongMatrices():
+    ChooseMatriz.close()
+    MatricesChooseLong.show()
+
+def gui_BackLongMatrices():
+    MatricesChooseLong.close()
+    ChooseMatriz.close()
+    
+
+#abrir matriz 2x2
+def Gui_open2x2():
+    MatricesChooseLong.close()
+    MatrixSimple.show()
+
+def Gui_open3x3():
+    MatricesChooseLong.close()
+    MatrixSimple3x3.show()
+
+
+#matrices 2x2
 def gui_Matricez1op():
     ChooseMatriz.close()
     MatrixSimple.show()
@@ -1300,6 +1335,21 @@ def gui_backMatricez1op():
 
 def Btn_1Matricez():
     MatrixDeterminante()
+
+#matriz 3x3
+def gui_Matricez3x3():
+    ChooseMatriz.close()
+    MatrixSimple3x3.show()
+
+def Gui_backMaatriz3x3():
+    MatrixSimple3x3.close()
+    MatricesChooseLong.show()
+
+def Btn_Matrix3x3():
+    MatrixDeterminante3x3()
+
+    
+
 
 
 #Main BUtton Link
@@ -1404,12 +1454,20 @@ Rectangulos.RecCalculateButton.clicked.connect(Btn_CalculateRectangulo)
 Rectangulos.RectBackButton.clicked.connect(gui_BackBtnRectangulo)
 
 ChooseMatriz.ChoseMaBackButton.clicked.connect(gui_BackbtnMatriz)
-ChooseMatriz.btnOpSimples.clicked.connect(gui_Matricez1op)
 
+#longitud de matricez
+ChooseMatriz.btnOpSimples.clicked.connect(gui_LongMatrices)
+MatricesChooseLong.M2x2.clicked.connect(gui_Matricez1op)
+MatricesChooseLong.M3x3.clicked.connect(gui_Matricez3x3)
+
+
+#2x2
 MatrixSimple.MatBackButton.clicked.connect(gui_backMatricez1op)
-
 MatrixSimple.DetCalculButton.clicked.connect(Btn_1Matricez)
 
+#3x3
+MatrixSimple3x3.MatBackButton.clicked.connect(Gui_backMaatriz3x3)
+MatrixSimple3x3.DetCalculButton.clicked.connect(Btn_Matrix3x3)
 
 
 
