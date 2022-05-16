@@ -82,7 +82,7 @@ border-radius:20px;</string>
      <string>&lt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="RecCalculateButton">
+   <widget class="QPushButton" name="TranCalculButton">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -186,7 +186,7 @@ font: 20pt &quot;Impact&quot;;
      <string>Matriz </string>
     </property>
    </widget>
-   <widget class="QPushButton" name="RecCalculateButton_2">
+   <widget class="QPushButton" name="InvCalcButton">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -200,7 +200,7 @@ font: 20pt &quot;Impact&quot;;
 border-radius:20px;</string>
     </property>
     <property name="text">
-     <string>Reverso</string>
+     <string>Inverso</string>
     </property>
    </widget>
    <widget class="QPushButton" name="RecCalculateButton_3">
