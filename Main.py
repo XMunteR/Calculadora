@@ -16,7 +16,7 @@ from scipy.misc import derivative
 #from CALCULADORA.Graficador import funcion
 from numpy.random import uniform as unif
 
-import Graficador,CalcTrapecio,Rectangulo,calculadora_newton,simpson38,Determinante,Transpuesta,Inversa
+import Graficador,CalcTrapecio,Rectangulo,calculadora_newton,simpson38,Determinante,Transpuesta,Inversa,Rango,Multiplicacion,Elevado
 
 
 
@@ -1044,6 +1044,82 @@ def MatrixInversa3x3():
     
     MatrixSimple3x3.ResultMatrix.setText(str(Inversa.result2))
 
+def MatrixRango():
+    num1 = float(MatrixSimple.num1Entry.toPlainText())
+    num2 = float(MatrixSimple.num2Entry.toPlainText())
+  
+    num4 = float(MatrixSimple.num4Entry.toPlainText())
+    num5 = float(MatrixSimple.num5Entry.toPlainText())
+   
+    Rango.matricesRango2x2(num1,num2,num4,num5)
+    MatrixSimple.ResultMatrix.setText(str(Rango.result1))
+
+def MatrixRango3x3():
+    num1 = float(MatrixSimple3x3.num1Entry.toPlainText())
+    num2 = float(MatrixSimple3x3.num2Entry.toPlainText())
+    num3 = float(MatrixSimple3x3.num3Entry.toPlainText())
+    num4 = float(MatrixSimple3x3.num4Entry.toPlainText())
+    num5 = float(MatrixSimple3x3.num5Entry.toPlainText())
+    num6 = float(MatrixSimple3x3.num6Entry.toPlainText())
+    num7 = float(MatrixSimple3x3.num7Entry.toPlainText())
+    num8 = float(MatrixSimple3x3.num8Entry.toPlainText())
+    num9 = float(MatrixSimple3x3.num9Entry.toPlainText())
+    Rango.matricesRango3x3(num1,num2,num3,num4,num5,num6,num7,num8,num9)
+    
+    MatrixSimple3x3.ResultMatrix.setText(str(Rango.result2))
+
+def MatrixMult():
+    num1 = float(MatrixSimple.num1Entry.toPlainText())
+    num2 = float(MatrixSimple.num2Entry.toPlainText())
+    num4 = float(MatrixSimple.num4Entry.toPlainText())
+    num5 = float(MatrixSimple.num5Entry.toPlainText())
+    Mult = float (MatrixSimple.MultiEntry.toPlainText())
+   
+    Multiplicacion.matricesMult2x2(num1,num2,num4,num5,Mult)
+    MatrixSimple.ResultMatrix.setText(str(Multiplicacion.result2))
+
+def MatrixMult3x3():
+    num1 = float(MatrixSimple3x3.num1Entry.toPlainText())
+    num2 = float(MatrixSimple3x3.num2Entry.toPlainText())
+    num3 = float(MatrixSimple3x3.num3Entry.toPlainText())
+    num4 = float(MatrixSimple3x3.num4Entry.toPlainText())
+    num5 = float(MatrixSimple3x3.num5Entry.toPlainText())
+    num6 = float(MatrixSimple3x3.num6Entry.toPlainText())
+    num7 = float(MatrixSimple3x3.num7Entry.toPlainText())
+    num8 = float(MatrixSimple3x3.num8Entry.toPlainText())
+    num9 = float(MatrixSimple3x3.num9Entry.toPlainText())
+    Mult = float (MatrixSimple3x3.MultiEntry.toPlainText())
+   
+    Multiplicacion.matricesMult3x3(num1,num2,num3,num4,num5,num6,num7,num8,num9,Mult)
+    MatrixSimple3x3.ResultMatrix.setText(str(Multiplicacion.result1))
+
+def MatrixElev():
+    
+    num1 = float(MatrixSimple.num1Entry.toPlainText())
+    num2 = float(MatrixSimple.num2Entry.toPlainText())
+    num4 = float(MatrixSimple.num4Entry.toPlainText())
+    num5 = float(MatrixSimple.num5Entry.toPlainText())
+    elev = int(MatrixSimple.ElevEntry.toPlainText())
+   
+    Elevado.matricesElevado2x2(num1,num2,num4,num5,elev)
+    MatrixSimple.ResultMatrix.setText(str(Elevado.result2))
+
+def MatrixElev3x3():
+    num1 = float(MatrixSimple3x3.num1Entry.toPlainText())
+    num2 = float(MatrixSimple3x3.num2Entry.toPlainText())
+    num3 = float(MatrixSimple3x3.num3Entry.toPlainText())
+    num4 = float(MatrixSimple3x3.num4Entry.toPlainText())
+    num5 = float(MatrixSimple3x3.num5Entry.toPlainText())
+    num6 = float(MatrixSimple3x3.num6Entry.toPlainText())
+    num7 = float(MatrixSimple3x3.num7Entry.toPlainText())
+    num8 = float(MatrixSimple3x3.num8Entry.toPlainText())
+    num9 = float(MatrixSimple3x3.num9Entry.toPlainText())
+    elev = int(MatrixSimple3x3.ElevEntry.toPlainText())
+    Elevado.matricesElevado3x3(num1,num2,num3,num4,num5,num6,num7,num8,num9,elev)
+    MatrixSimple3x3.ResultMatrix.setText(str(Elevado.result1))
+
+
+
 
 
 
@@ -1514,13 +1590,18 @@ MatrixSimple.MatBackButton.clicked.connect(gui_backMatricez1op)
 MatrixSimple.DetCalculButton.clicked.connect(Btn_1Matricez)
 MatrixSimple.TranCalculButton.clicked.connect(MatrixTranspuesta)
 MatrixSimple.InvCalcButton.clicked.connect(MatrixInversa)
+MatrixSimple.RanCalcButton.clicked.connect(MatrixRango)
+MatrixSimple.MultCalcButton.clicked.connect(MatrixMult)
+MatrixSimple.ElevCalcButton.clicked.connect(MatrixElev)
 
 #3x3
 MatrixSimple3x3.MatBackButton.clicked.connect(Gui_backMaatriz3x3)
 MatrixSimple3x3.DetCalculButton.clicked.connect(Btn_Matrix3x3)
 MatrixSimple3x3.TranCalculButton.clicked.connect(MatrixTranspuesta3x3)
 MatrixSimple3x3.InvCalcButton.clicked.connect(MatrixInversa3x3)
-
+MatrixSimple3x3.RanCalcButton.clicked.connect(MatrixRango3x3)
+MatrixSimple3x3.MultCalcButton.clicked.connect(MatrixMult3x3)
+MatrixSimple3x3.ElevCalcButton.clicked.connect(MatrixElev3x3)
 
 
 

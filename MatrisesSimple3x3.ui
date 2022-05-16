@@ -268,7 +268,7 @@ border-radius:20px;</string>
      <string>Inverso</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="RecCalculateButton_3">
+   <widget class="QPushButton" name="RanCalcButton">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -285,7 +285,7 @@ border-radius:20px;</string>
      <string>Rango</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="RecCalculateButton_4">
+   <widget class="QPushButton" name="MultCalcButton">
     <property name="geometry">
      <rect>
       <x>300</x>
@@ -302,11 +302,11 @@ border-radius:20px;</string>
      <string>Multiplicado</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="RecCalculateButton_5">
+   <widget class="QPushButton" name="ElevCalcButton">
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>310</y>
+      <y>260</y>
       <width>171</width>
       <height>41</height>
      </rect>
@@ -319,24 +319,7 @@ border-radius:20px;</string>
      <string>Elevado </string>
     </property>
    </widget>
-   <widget class="QPushButton" name="RecCalculateButton_6">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>260</y>
-      <width>91</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 20pt &quot;impact&quot;;
-border-radius:20px;</string>
-    </property>
-    <property name="text">
-     <string>Suma</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="ExtIzqEntry_10">
+   <widget class="QTextEdit" name="ElevEntry">
     <property name="geometry">
      <rect>
       <x>490</x>
@@ -349,20 +332,7 @@ border-radius:20px;</string>
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="ExtIzqEntry_11">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>320</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="ExtIzqEntry_12">
+   <widget class="QTextEdit" name="MultiEntry">
     <property name="geometry">
      <rect>
       <x>490</x>
