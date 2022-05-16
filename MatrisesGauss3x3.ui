@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>741</width>
-    <height>500</height>
+    <width>383</width>
+    <height>552</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>700</width>
-    <height>500</height>
+    <width>0</width>
+    <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1100</width>
-    <height>500</height>
+    <width>2000</width>
+    <height>2000</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -43,14 +43,16 @@ color:#74E0Ef;
 font: 30pt &quot;Impact&quot;;
 border-radius:30px;
 }
-
+Line{
+background-color:white;
+}
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>90</x>
       <y>10</y>
       <width>241</width>
       <height>61</height>
@@ -65,7 +67,7 @@ font: 50pt &quot;Impact&quot;;
      <string>Matrices</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="MatBackButton">
+   <widget class="QPushButton" name="GausBackButton">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -82,27 +84,10 @@ border-radius:20px;</string>
      <string>&lt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="TranCalculButton">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>110</y>
-      <width>171</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 20pt &quot;impact&quot;;
-border-radius:20px;</string>
-    </property>
-    <property name="text">
-     <string>Transpuesta </string>
-    </property>
-   </widget>
    <widget class="QTextEdit" name="num1Entry">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>90</x>
       <y>140</y>
       <width>41</width>
       <height>31</height>
@@ -112,27 +97,10 @@ border-radius:20px;</string>
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="DetCalculButton">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>110</y>
-      <width>171</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 20pt &quot;impact&quot;;
-border-radius:20px;</string>
-    </property>
-    <property name="text">
-     <string>Determinante</string>
-    </property>
-   </widget>
    <widget class="QTextEdit" name="num2Entry">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>140</x>
       <y>140</y>
       <width>41</width>
       <height>31</height>
@@ -145,7 +113,7 @@ border-radius:20px;</string>
    <widget class="QTextEdit" name="num3Entry">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>190</x>
       <y>140</y>
       <width>41</width>
       <height>31</height>
@@ -158,7 +126,7 @@ border-radius:20px;</string>
    <widget class="QTextEdit" name="num4Entry">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>90</x>
       <y>180</y>
       <width>41</width>
       <height>31</height>
@@ -171,7 +139,7 @@ border-radius:20px;</string>
    <widget class="QTextEdit" name="num6Entry">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>190</x>
       <y>180</y>
       <width>41</width>
       <height>31</height>
@@ -184,7 +152,7 @@ border-radius:20px;</string>
    <widget class="QTextEdit" name="num5Entry">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>140</x>
       <y>180</y>
       <width>41</width>
       <height>31</height>
@@ -197,7 +165,7 @@ border-radius:20px;</string>
    <widget class="QTextEdit" name="num9Entry">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>190</x>
       <y>220</y>
       <width>41</width>
       <height>31</height>
@@ -210,7 +178,7 @@ border-radius:20px;</string>
    <widget class="QTextEdit" name="num7Entry">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>90</x>
       <y>220</y>
       <width>41</width>
       <height>31</height>
@@ -223,7 +191,7 @@ border-radius:20px;</string>
    <widget class="QTextEdit" name="num8Entry">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>140</x>
       <y>220</y>
       <width>41</width>
       <height>31</height>
@@ -236,7 +204,7 @@ border-radius:20px;</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>160</x>
       <y>80</y>
       <width>71</width>
       <height>41</height>
@@ -251,108 +219,20 @@ font: 20pt &quot;Impact&quot;;
      <string>Matriz </string>
     </property>
    </widget>
-   <widget class="QPushButton" name="InvCalcButton">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>160</y>
-      <width>131</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 20pt &quot;impact&quot;;
-border-radius:20px;</string>
-    </property>
-    <property name="text">
-     <string>Inverso</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="RanCalcButton">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>160</y>
-      <width>91</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 20pt &quot;impact&quot;;
-border-radius:20px;</string>
-    </property>
-    <property name="text">
-     <string>Rango</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="MultCalcButton">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>260</y>
-      <width>171</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 20pt &quot;impact&quot;;
-border-radius:20px;</string>
-    </property>
-    <property name="text">
-     <string>Multiplicado</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="ElevCalcButton">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>310</y>
-      <width>171</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 20pt &quot;impact&quot;;
-border-radius:20px;</string>
-    </property>
-    <property name="text">
-     <string>Elevado </string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="ElevEntry">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>320</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="MultiEntry">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>270</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="ResultMatrix">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>270</y>
+      <x>60</x>
+      <y>340</y>
       <width>261</width>
       <height>131</height>
      </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>1000</width>
+      <height>900</height>
+     </size>
     </property>
     <property name="styleSheet">
      <string notr="true">font{
@@ -367,11 +247,17 @@ arial;
    <widget class="QPushButton" name="GausButton">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>210</y>
+      <x>100</x>
+      <y>490</y>
       <width>171</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>300</height>
+     </size>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 20pt &quot;impact&quot;;
@@ -379,6 +265,63 @@ border-radius:20px;</string>
     </property>
     <property name="text">
      <string>GaussJodan</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="num7Entry_2">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>140</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="num7Entry_3">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>220</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="num7Entry_4">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>180</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>140</y>
+      <width>16</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background{
+color:white;
+}</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
     </property>
    </widget>
   </widget>

@@ -16,7 +16,7 @@ from scipy.misc import derivative
 #from CALCULADORA.Graficador import funcion
 from numpy.random import uniform as unif
 
-import Graficador,CalcTrapecio,Rectangulo,calculadora_newton,simpson38,Determinante,Transpuesta,Inversa,Rango,Multiplicacion,Elevado
+import Graficador,CalcTrapecio,Rectangulo,calculadora_newton,simpson38,Determinante,Transpuesta,Inversa,Rango,Multiplicacion,Elevado,GausJordan
 
 
 
@@ -51,6 +51,10 @@ Montecarlo = uic.loadUi("Montecarlo.ui")
 Rectangulos = uic.loadUi("Rectangulo.ui")
 MatrixSimple = uic.loadUi("MatrisesSimple2x2.ui")
 MatrixSimple3x3 = uic.loadUi("MatrisesSimple3x3.ui")
+MatrixGauss = uic.loadUi("MatrisesGauss.ui")
+MatrixGauss2x2 = uic.loadUi("MatrisesGauss2x2.ui")
+MatrixGauss3x3 = uic.loadUi("MatrisesGauss3x3.ui")
+
 ChooseMatriz = uic.loadUi("MatricesChoose.ui")
 MatricesChooseLong = uic.loadUi("MatricesChooseLong.ui")
 #FUNCIONES  
@@ -1118,6 +1122,17 @@ def MatrixElev3x3():
     Elevado.matricesElevado3x3(num1,num2,num3,num4,num5,num6,num7,num8,num9,elev)
     MatrixSimple3x3.ResultMatrix.setText(str(Elevado.result1))
 
+def MatrixGauss2():
+    num1 = float(MatrixGauss2x2.num1Entry.toPlainText())
+    num2 = float(MatrixGauss2x2.num2Entry.toPlainText())
+    num4 = float(MatrixGauss2x2.num4Entry.toPlainText())
+    num5 = float(MatrixGauss2x2.num5Entry.toPlainText())
+    ind1 = float(MatrixGauss2x2.ind1Entry.toPlainText())
+    ind2 = float(MatrixGauss2x2.ind2Entry.toPlainText())
+    
+    GausJordan.GaussJordan2x3(num1,num2,num4,num5,ind1,ind2)
+    MatrixGauss2x2.ResultMatrix.setText(str(GausJordan.result2x2))
+
 
 
 
@@ -1471,8 +1486,22 @@ def Gui_backMaatriz3x3():
 def Btn_Matrix3x3():
     MatrixDeterminante3x3()
 
-    
+#Gauss Jordan 
+def gui_openGaus():
+    MatrixSimple3x3.close()
+    MatrixGauss.show()
 
+def gui_openGaus2():
+    MatrixSimple.close()
+    MatrixGauss.show()
+    
+def gui_BackChooseGauss():
+    MatrixGauss.close()
+    MatricesChooseLong.show()
+
+def gui_openGauss2x2():
+    MatrixGauss.close()
+    MatrixGauss2x2.show()
 
 
 #Main BUtton Link
@@ -1593,6 +1622,7 @@ MatrixSimple.InvCalcButton.clicked.connect(MatrixInversa)
 MatrixSimple.RanCalcButton.clicked.connect(MatrixRango)
 MatrixSimple.MultCalcButton.clicked.connect(MatrixMult)
 MatrixSimple.ElevCalcButton.clicked.connect(MatrixElev)
+MatrixSimple.GausButton.clicked.connect(gui_openGaus2)
 
 #3x3
 MatrixSimple3x3.MatBackButton.clicked.connect(Gui_backMaatriz3x3)
@@ -1602,6 +1632,12 @@ MatrixSimple3x3.InvCalcButton.clicked.connect(MatrixInversa3x3)
 MatrixSimple3x3.RanCalcButton.clicked.connect(MatrixRango3x3)
 MatrixSimple3x3.MultCalcButton.clicked.connect(MatrixMult3x3)
 MatrixSimple3x3.ElevCalcButton.clicked.connect(MatrixElev3x3)
+MatrixSimple3x3.GausButton.clicked.connect(gui_openGaus)
+
+#Choose Gauss
+MatrixGauss.GausBackButton.clicked.connect(gui_BackChooseGauss)
+MatrixGauss.GausButton2x2.clicked.connect(gui_openGauss2x2)
+MatrixGauss2x2.GausButton.clicked.connect(MatrixGauss2)
 
 
 
