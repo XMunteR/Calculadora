@@ -105,7 +105,7 @@ border-radius:20px;</string>
      <string>2x2</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="GausButton_2">
+   <widget class="QPushButton" name="GausButton3x3">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -128,7 +128,7 @@ border-radius:20px;</string>
      <string>3x3</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="GausButton_3">
+   <widget class="QPushButton" name="GausButton4x4">
     <property name="geometry">
      <rect>
       <x>200</x>
@@ -151,7 +151,7 @@ border-radius:20px;</string>
      <string>4x4</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="GausButton_4">
+   <widget class="QPushButton" name="GausButton5x5">
     <property name="geometry">
      <rect>
       <x>290</x>

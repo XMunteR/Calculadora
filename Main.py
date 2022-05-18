@@ -54,6 +54,7 @@ MatrixSimple3x3 = uic.loadUi("MatrisesSimple3x3.ui")
 MatrixGauss = uic.loadUi("MatrisesGauss.ui")
 MatrixGauss2x2 = uic.loadUi("MatrisesGauss2x2.ui")
 MatrixGauss3x3 = uic.loadUi("MatrisesGauss3x3.ui")
+MatrixGauss4x4 = uic.loadUi("MatrisesGauss4x4.ui")
 
 ChooseMatriz = uic.loadUi("MatricesChoose.ui")
 MatricesChooseLong = uic.loadUi("MatricesChooseLong.ui")
@@ -1133,6 +1134,48 @@ def MatrixGauss2():
     GausJordan.GaussJordan2x3(num1,num2,num4,num5,ind1,ind2)
     MatrixGauss2x2.ResultMatrix.setText(str(GausJordan.result2x2))
 
+def MatrixGauss3():
+    num1 = float(MatrixGauss3x3.num1Entry.toPlainText())
+    num2 = float(MatrixGauss3x3.num2Entry.toPlainText())
+    num3 = float(MatrixGauss3x3.num3Entry.toPlainText())
+    num4 = float(MatrixGauss3x3.num4Entry.toPlainText())
+    num5 = float(MatrixGauss3x3.num5Entry.toPlainText())
+    num6 = float(MatrixGauss3x3.num6Entry.toPlainText())
+    num7 = float(MatrixGauss3x3.num7Entry.toPlainText())
+    num8 = float(MatrixGauss3x3.num8Entry.toPlainText())
+    num9 = float(MatrixGauss3x3.num9Entry.toPlainText())
+    ind1 = float(MatrixGauss3x3.ind1Entry.toPlainText())
+    ind2 = float(MatrixGauss3x3.ind2Entry.toPlainText())
+    ind3 = float(MatrixGauss3x3.ind3Entry.toPlainText())
+    
+    GausJordan.GaussJordan3x4(num1,num2,num3,num4,num5,num6,num7,num8,num9,ind1,ind2,ind3)
+    MatrixGauss3x3.ResultMatrix.setText(str(GausJordan.result3x3))
+
+def MatrixGauss4():
+    num1 = float(MatrixGauss4x4.num1Entry.toPlainText())
+    num2 = float(MatrixGauss4x4.num2Entry.toPlainText())
+    num3 = float(MatrixGauss4x4.num3Entry.toPlainText())
+    num4 = float(MatrixGauss4x4.num4Entry.toPlainText())
+    num5 = float(MatrixGauss4x4.num5Entry.toPlainText())
+    num6 = float(MatrixGauss4x4.num6Entry.toPlainText())
+    num7 = float(MatrixGauss4x4.num7Entry.toPlainText())
+    num8 = float(MatrixGauss4x4.num8Entry.toPlainText())
+    num9 = float(MatrixGauss4x4.num9Entry.toPlainText())
+    num10 = float(MatrixGauss4x4.num10Entry.toPlainText())
+    num11 = float(MatrixGauss4x4.num11Entry.toPlainText())
+    num12 = float(MatrixGauss4x4.num12Entry.toPlainText())
+    num13 = float(MatrixGauss4x4.num13Entry.toPlainText())
+    num14 = float(MatrixGauss4x4.num14Entry.toPlainText())
+    num15 = float(MatrixGauss4x4.num15Entry.toPlainText())
+    num16 = float(MatrixGauss4x4.num16Entry.toPlainText())
+    ind1 = float(MatrixGauss4x4.ind1Entry.toPlainText())
+    ind2 = float(MatrixGauss4x4.ind2Entry.toPlainText())
+    ind3 = float(MatrixGauss4x4.ind3Entry.toPlainText())
+    ind4 = float(MatrixGauss4x4.ind4Entry.toPlainText())
+    
+    GausJordan.GaussJordan4x5(num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num13,num12,num14,num15,num16,ind1,ind2,ind3,ind4)
+    MatrixGauss3x3.ResultMatrix.setText(str(GausJordan.result4x4))
+
 
 
 
@@ -1503,6 +1546,29 @@ def gui_openGauss2x2():
     MatrixGauss.close()
     MatrixGauss2x2.show()
 
+def gui_backGauss2x2():
+    MatrixGauss.show()
+    MatrixGauss2x2.close()
+
+def gui_openGauss3x3():
+    MatrixGauss.close()
+    MatrixGauss3x3.show()
+
+def gui_backGauss3x3():
+    MatrixGauss.show()
+    MatrixGauss3x3.close()
+
+def gui_openGauss4x4():
+    MatrixGauss.close()
+    MatrixGauss4x4.show()
+
+def gui_backGauss4x4():
+    MatrixGauss.show()
+    MatrixGauss4x4.close()
+
+
+
+
 
 #Main BUtton Link
 Main.StartButton.clicked.connect(gui_Start)
@@ -1637,8 +1703,20 @@ MatrixSimple3x3.GausButton.clicked.connect(gui_openGaus)
 #Choose Gauss
 MatrixGauss.GausBackButton.clicked.connect(gui_BackChooseGauss)
 MatrixGauss.GausButton2x2.clicked.connect(gui_openGauss2x2)
-MatrixGauss2x2.GausButton.clicked.connect(MatrixGauss2)
+MatrixGauss.GausButton3x3.clicked.connect(gui_openGauss3x3)
+MatrixGauss.GausButton4x4.clicked.connect(gui_openGauss4x4)
 
+#gauss 2x2
+MatrixGauss2x2.GausButton.clicked.connect(MatrixGauss2)
+MatrixGauss2x2.GausBackButton.clicked.connect(gui_backGauss2x2)
+
+#gauss 3x3
+MatrixGauss3x3.GausButton.clicked.connect(MatrixGauss3)
+MatrixGauss3x3.GausBackButton.clicked.connect(gui_backGauss3x3)
+
+#gauss 4x4
+MatrixGauss4x4.GausButton.clicked.connect(MatrixGauss4)
+MatrixGauss4x4.GausBackButton.clicked.connect(gui_backGauss4x4)
 
 
 
