@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>392</width>
-    <height>572</height>
+    <width>512</width>
+    <height>606</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -52,7 +52,7 @@ background-color:white;
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>120</x>
       <y>10</y>
       <width>241</width>
       <height>61</height>
@@ -87,7 +87,7 @@ border-radius:20px;</string>
    <widget class="QTextEdit" name="num1Entry">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>100</x>
       <y>140</y>
       <width>41</width>
       <height>31</height>
@@ -100,7 +100,7 @@ border-radius:20px;</string>
    <widget class="QTextEdit" name="num2Entry">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>150</x>
       <y>140</y>
       <width>41</width>
       <height>31</height>
@@ -113,7 +113,7 @@ border-radius:20px;</string>
    <widget class="QTextEdit" name="num3Entry">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>200</x>
       <y>140</y>
       <width>41</width>
       <height>31</height>
@@ -123,10 +123,23 @@ border-radius:20px;</string>
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="num5Entry">
+   <widget class="QTextEdit" name="num6Entry">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>100</x>
+      <y>180</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="num8Entry">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
       <y>180</y>
       <width>41</width>
       <height>31</height>
@@ -139,7 +152,7 @@ border-radius:20px;</string>
    <widget class="QTextEdit" name="num7Entry">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>150</x>
       <y>180</y>
       <width>41</width>
       <height>31</height>
@@ -149,11 +162,11 @@ border-radius:20px;</string>
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="num6Entry">
+   <widget class="QTextEdit" name="num13Entry">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>180</y>
+      <x>200</x>
+      <y>220</y>
       <width>41</width>
       <height>31</height>
      </rect>
@@ -165,7 +178,7 @@ border-radius:20px;</string>
    <widget class="QTextEdit" name="num11Entry">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>100</x>
       <y>220</y>
       <width>41</width>
       <height>31</height>
@@ -175,23 +188,10 @@ border-radius:20px;</string>
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="num9Entry">
+   <widget class="QTextEdit" name="num12Entry">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>220</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="num10Entry">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
+      <x>150</x>
       <y>220</y>
       <width>41</width>
       <height>31</height>
@@ -204,7 +204,7 @@ border-radius:20px;</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>220</x>
       <y>80</y>
       <width>71</width>
       <height>41</height>
@@ -222,8 +222,8 @@ font: 20pt &quot;Impact&quot;;
    <widget class="QLabel" name="ResultMatrix">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>340</y>
+      <x>120</x>
+      <y>400</y>
       <width>261</width>
       <height>131</height>
      </rect>
@@ -245,8 +245,8 @@ font:20px</string>
    <widget class="QPushButton" name="GausButton">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>490</y>
+      <x>160</x>
+      <y>550</y>
       <width>171</width>
       <height>41</height>
      </rect>
@@ -268,7 +268,7 @@ border-radius:20px;</string>
    <widget class="QTextEdit" name="ind1Entry">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>380</x>
       <y>140</y>
       <width>41</width>
       <height>31</height>
@@ -281,7 +281,7 @@ border-radius:20px;</string>
    <widget class="QTextEdit" name="ind3Entry">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>380</x>
       <y>220</y>
       <width>41</width>
       <height>31</height>
@@ -294,7 +294,7 @@ border-radius:20px;</string>
    <widget class="QTextEdit" name="ind2Entry">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>380</x>
       <y>180</y>
       <width>41</width>
       <height>31</height>
@@ -307,10 +307,10 @@ border-radius:20px;</string>
    <widget class="Line" name="line">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>350</x>
       <y>140</y>
       <width>16</width>
-      <height>151</height>
+      <height>191</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -322,10 +322,10 @@ color:white;
      <enum>Qt::Vertical</enum>
     </property>
    </widget>
-   <widget class="QTextEdit" name="num8Entry">
+   <widget class="QTextEdit" name="num9Entry">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>250</x>
       <y>180</y>
       <width>41</width>
       <height>31</height>
@@ -338,34 +338,8 @@ color:white;
    <widget class="QTextEdit" name="num4Entry">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>250</x>
       <y>140</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="num12Entry">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>220</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="num13Entry">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>260</y>
       <width>41</width>
       <height>31</height>
      </rect>
@@ -377,21 +351,8 @@ color:white;
    <widget class="QTextEdit" name="num14Entry">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>260</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="num15Entry">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>260</y>
+      <x>250</x>
+      <y>220</y>
       <width>41</width>
       <height>31</height>
      </rect>
@@ -403,7 +364,46 @@ color:white;
    <widget class="QTextEdit" name="num16Entry">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>100</x>
+      <y>260</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="num17Entry">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>260</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="num18Entry">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>260</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="num19Entry">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
       <y>260</y>
       <width>41</width>
       <height>31</height>
@@ -416,8 +416,138 @@ color:white;
    <widget class="QTextEdit" name="ind4Entry">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>380</x>
       <y>260</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="ind5Entry">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>300</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="num10Entry">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>180</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="num5Entry">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>140</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="num15Entry">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>220</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="num20Entry">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>260</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="num21Entry">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>300</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="num23Entry">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>300</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="num22Entry">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>300</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="num24Entry">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>300</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="num25Entry">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>300</y>
       <width>41</width>
       <height>31</height>
      </rect>

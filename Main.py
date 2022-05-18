@@ -55,6 +55,9 @@ MatrixGauss = uic.loadUi("MatrisesGauss.ui")
 MatrixGauss2x2 = uic.loadUi("MatrisesGauss2x2.ui")
 MatrixGauss3x3 = uic.loadUi("MatrisesGauss3x3.ui")
 MatrixGauss4x4 = uic.loadUi("MatrisesGauss4x4.ui")
+MatrixGauss5x5 = uic.loadUi("MatrisesGauss5x5.ui")
+MatrixGauss6x6 = uic.loadUi("MatrisesGauss6x6.ui")
+MatrixGauss7x7 = uic.loadUi("MatrisesGauss7x7.ui")
 
 ChooseMatriz = uic.loadUi("MatricesChoose.ui")
 MatricesChooseLong = uic.loadUi("MatricesChooseLong.ui")
@@ -1173,8 +1176,163 @@ def MatrixGauss4():
     ind3 = float(MatrixGauss4x4.ind3Entry.toPlainText())
     ind4 = float(MatrixGauss4x4.ind4Entry.toPlainText())
     
-    GausJordan.GaussJordan4x5(num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num13,num12,num14,num15,num16,ind1,ind2,ind3,ind4)
+    GausJordan.GaussJordan4x5(num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,
+    num11,num13,num12,num14,num15,num16,ind1,ind2,ind3,ind4)
     MatrixGauss3x3.ResultMatrix.setText(str(GausJordan.result4x4))
+
+def MatrixGauss5():
+    num1 = float(MatrixGauss5x5.num1Entry.toPlainText())
+    num2 = float(MatrixGauss5x5.num2Entry.toPlainText())
+    num3 = float(MatrixGauss5x5.num3Entry.toPlainText())
+    num4 = float(MatrixGauss5x5.num4Entry.toPlainText())
+    num5 = float(MatrixGauss5x5.num5Entry.toPlainText())
+    num6 = float(MatrixGauss5x5.num6Entry.toPlainText())
+    num7 = float(MatrixGauss5x5.num7Entry.toPlainText())
+    num8 = float(MatrixGauss5x5.num8Entry.toPlainText())
+    num9 = float(MatrixGauss5x5.num9Entry.toPlainText())
+    num10 = float(MatrixGauss5x5.num10Entry.toPlainText())
+    num11 = float(MatrixGauss5x5.num11Entry.toPlainText())
+    num12 = float(MatrixGauss5x5.num12Entry.toPlainText())
+    num13 = float(MatrixGauss5x5.num13Entry.toPlainText())
+    num14 = float(MatrixGauss5x5.num14Entry.toPlainText())
+    num15 = float(MatrixGauss5x5.num15Entry.toPlainText())
+    num16 = float(MatrixGauss5x5.num16Entry.toPlainText())
+    num17 = float(MatrixGauss5x5.num17Entry.toPlainText())
+    num18 = float(MatrixGauss5x5.num18Entry.toPlainText())
+    num19 = float(MatrixGauss5x5.num19Entry.toPlainText())
+    num20 = float(MatrixGauss5x5.num20Entry.toPlainText())
+    num21 = float(MatrixGauss5x5.num21Entry.toPlainText())
+    num22 = float(MatrixGauss5x5.num22Entry.toPlainText())
+    num23 = float(MatrixGauss5x5.num23Entry.toPlainText())
+    num24 = float(MatrixGauss5x5.num24Entry.toPlainText())
+    num25 = float(MatrixGauss5x5.num25Entry.toPlainText())
+    ind1 = float(MatrixGauss5x5.ind1Entry.toPlainText())
+    ind2 = float(MatrixGauss5x5.ind2Entry.toPlainText())
+    ind3 = float(MatrixGauss5x5.ind3Entry.toPlainText())
+    ind4 = float(MatrixGauss5x5.ind4Entry.toPlainText())
+    ind5 = float(MatrixGauss5x5.ind5Entry.toPlainText())
+    
+    GausJordan.GaussJordan5x6(num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,
+    num11,num13,num12,num14,num15,num16,num17,num18,num19,num20,num21,num22,num23,
+    num24,num25,ind1,ind2,ind3,ind4,ind5)
+    MatrixGauss5x5.ResultMatrix.setText(str(GausJordan.result5x5))
+
+def MatrixGauss6():
+    num1 = float(MatrixGauss6x6.num1Entry.toPlainText())
+    num2 = float(MatrixGauss6x6.num2Entry.toPlainText())
+    num3 = float(MatrixGauss6x6.num3Entry.toPlainText())
+    num4 = float(MatrixGauss6x6.num4Entry.toPlainText())
+    num5 = float(MatrixGauss6x6.num5Entry.toPlainText())
+    num6 = float(MatrixGauss6x6.num6Entry.toPlainText())
+    num7 = float(MatrixGauss6x6.num7Entry.toPlainText())
+    num8 = float(MatrixGauss6x6.num8Entry.toPlainText())
+    num9 = float(MatrixGauss6x6.num9Entry.toPlainText())
+    num10 = float(MatrixGauss6x6.num10Entry.toPlainText())
+    num11 = float(MatrixGauss6x6.num11Entry.toPlainText())
+    num12 = float(MatrixGauss6x6.num12Entry.toPlainText())
+    num13 = float(MatrixGauss6x6.num13Entry.toPlainText())
+    num14 = float(MatrixGauss6x6.num14Entry.toPlainText())
+    num15 = float(MatrixGauss6x6.num15Entry.toPlainText())
+    num16 = float(MatrixGauss6x6.num16Entry.toPlainText())
+    num17 = float(MatrixGauss6x6.num17Entry.toPlainText())
+    num18 = float(MatrixGauss6x6.num18Entry.toPlainText())
+    num19 = float(MatrixGauss6x6.num19Entry.toPlainText())
+    num20 = float(MatrixGauss6x6.num20Entry.toPlainText())
+    num21 = float(MatrixGauss6x6.num21Entry.toPlainText())
+    num22 = float(MatrixGauss6x6.num22Entry.toPlainText())
+    num23 = float(MatrixGauss6x6.num23Entry.toPlainText())
+    num24 = float(MatrixGauss6x6.num24Entry.toPlainText())
+    num25 = float(MatrixGauss6x6.num25Entry.toPlainText())
+    num26 = float(MatrixGauss6x6.num26Entry.toPlainText())
+    num27 = float(MatrixGauss6x6.num27Entry.toPlainText())
+    num28 = float(MatrixGauss6x6.num28Entry.toPlainText())
+    num29 = float(MatrixGauss6x6.num29Entry.toPlainText())
+    num30 = float(MatrixGauss6x6.num30Entry.toPlainText())
+    num31 = float(MatrixGauss6x6.num31Entry.toPlainText())
+    num32 = float(MatrixGauss6x6.num32Entry.toPlainText())
+    num33 = float(MatrixGauss6x6.num33Entry.toPlainText())
+    num34 = float(MatrixGauss6x6.num34Entry.toPlainText())
+    num35 = float(MatrixGauss6x6.num35Entry.toPlainText())
+    num36 = float(MatrixGauss6x6.num36Entry.toPlainText())
+    ind1 = float(MatrixGauss6x6.ind1Entry.toPlainText())
+    ind2 = float(MatrixGauss6x6.ind2Entry.toPlainText())
+    ind3 = float(MatrixGauss6x6.ind3Entry.toPlainText())
+    ind4 = float(MatrixGauss6x6.ind4Entry.toPlainText())
+    ind5 = float(MatrixGauss6x6.ind5Entry.toPlainText())
+    ind6 = float(MatrixGauss6x6.ind6Entry.toPlainText())
+    
+    GausJordan.GaussJordan6x7(num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,
+    num11,num13,num12,num14,num15,num16,num17,num18,num19,num20,num21,num22,num23,
+    num24,num25,num26,num27,num28,num29,num30,num31,num32,num33,num34,num35,num36,
+    ind1,ind2,ind3,ind4,ind5,ind6)
+    MatrixGauss6x6.ResultMatrix.setText(str(GausJordan.result6x6))
+
+def MatrixGauss7():
+    num1 = float(MatrixGauss7x7.num1Entry.toPlainText())
+    num2 = float(MatrixGauss7x7.num2Entry.toPlainText())
+    num3 = float(MatrixGauss7x7.num3Entry.toPlainText())
+    num4 = float(MatrixGauss7x7.num4Entry.toPlainText())
+    num5 = float(MatrixGauss7x7.num5Entry.toPlainText())
+    num6 = float(MatrixGauss7x7.num6Entry.toPlainText())
+    num7 = float(MatrixGauss7x7.num7Entry.toPlainText())
+    num8 = float(MatrixGauss7x7.num8Entry.toPlainText())
+    num9 = float(MatrixGauss7x7.num9Entry.toPlainText())
+    num10 = float(MatrixGauss7x7.num10Entry.toPlainText())
+    num11 = float(MatrixGauss7x7.num11Entry.toPlainText())
+    num12 = float(MatrixGauss7x7.num12Entry.toPlainText())
+    num13 = float(MatrixGauss7x7.num13Entry.toPlainText())
+    num14 = float(MatrixGauss7x7.num14Entry.toPlainText())
+    num15 = float(MatrixGauss7x7.num15Entry.toPlainText())
+    num16 = float(MatrixGauss7x7.num16Entry.toPlainText())
+    num17 = float(MatrixGauss7x7.num17Entry.toPlainText())
+    num18 = float(MatrixGauss7x7.num18Entry.toPlainText())
+    num19 = float(MatrixGauss7x7.num19Entry.toPlainText())
+    num20 = float(MatrixGauss7x7.num20Entry.toPlainText())
+    num21 = float(MatrixGauss7x7.num21Entry.toPlainText())
+    num22 = float(MatrixGauss7x7.num22Entry.toPlainText())
+    num23 = float(MatrixGauss7x7.num23Entry.toPlainText())
+    num24 = float(MatrixGauss7x7.num24Entry.toPlainText())
+    num25 = float(MatrixGauss7x7.num25Entry.toPlainText())
+    num26 = float(MatrixGauss7x7.num26Entry.toPlainText())
+    num27 = float(MatrixGauss7x7.num27Entry.toPlainText())
+    num28 = float(MatrixGauss7x7.num28Entry.toPlainText())
+    num29 = float(MatrixGauss7x7.num29Entry.toPlainText())
+    num30 = float(MatrixGauss7x7.num30Entry.toPlainText())
+    num31 = float(MatrixGauss7x7.num31Entry.toPlainText())
+    num32 = float(MatrixGauss7x7.num32Entry.toPlainText())
+    num33 = float(MatrixGauss7x7.num33Entry.toPlainText())
+    num34 = float(MatrixGauss7x7.num34Entry.toPlainText())
+    num35 = float(MatrixGauss7x7.num35Entry.toPlainText())
+    num36 = float(MatrixGauss7x7.num36Entry.toPlainText())
+    num37 = float(MatrixGauss7x7.num37Entry.toPlainText())
+    num38 = float(MatrixGauss7x7.num38Entry.toPlainText())
+    num39 = float(MatrixGauss7x7.num39Entry.toPlainText())
+    num40 = float(MatrixGauss7x7.num40Entry.toPlainText())
+    num41 = float(MatrixGauss7x7.num41Entry.toPlainText())
+    num42 = float(MatrixGauss7x7.num42Entry.toPlainText())
+    num43 = float(MatrixGauss7x7.num43Entry.toPlainText())
+    num44 = float(MatrixGauss7x7.num44Entry.toPlainText())
+    num45 = float(MatrixGauss7x7.num45Entry.toPlainText())
+    num46 = float(MatrixGauss7x7.num46Entry.toPlainText())
+    num47 = float(MatrixGauss7x7.num47Entry.toPlainText())
+    num48 = float(MatrixGauss7x7.num48Entry.toPlainText())
+    num49 = float(MatrixGauss7x7.num49Entry.toPlainText())
+    ind1 = float(MatrixGauss7x7.ind1Entry.toPlainText())
+    ind2 = float(MatrixGauss7x7.ind2Entry.toPlainText())
+    ind3 = float(MatrixGauss7x7.ind3Entry.toPlainText())
+    ind4 = float(MatrixGauss7x7.ind4Entry.toPlainText())
+    ind5 = float(MatrixGauss7x7.ind5Entry.toPlainText())
+    ind6 = float(MatrixGauss7x7.ind6Entry.toPlainText())
+    ind7 = float(MatrixGauss7x7.ind7Entry.toPlainText())
+    
+    
+    GausJordan.GaussJordan7x8(num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,
+    num11,num13,num12,num14,num15,num16,num17,num18,num19,num20,num21,num22,num23,
+    num24,num25,num26,num27,num28,num29,num30,num31,num32,num33,num34,num35,num36,
+    num37,num38,num39,num40,num41,num42,num43,num44,num45,num46,num47,num48,num49,
+    ind1,ind2,ind3,ind4,ind5,ind6,ind7)
+    MatrixGauss7x7.ResultMatrix.setText(str(GausJordan.result7x7))
+
 
 
 
@@ -1566,6 +1724,30 @@ def gui_backGauss4x4():
     MatrixGauss.show()
     MatrixGauss4x4.close()
 
+def gui_openGauss5x5():
+    MatrixGauss.close()
+    MatrixGauss5x5.show()
+
+def gui_backGauss5x5():
+    MatrixGauss.show()
+    MatrixGauss5x5.close()
+
+def gui_openGauss6x6():
+    MatrixGauss.close()
+    MatrixGauss6x6.show()
+
+def gui_backGauss6x6():
+    MatrixGauss.show()
+    MatrixGauss6x6.close()
+
+def gui_openGauss7x7():
+    MatrixGauss.close()
+    MatrixGauss7x7.show()
+
+def gui_backGauss7x7():
+    MatrixGauss.show()
+    MatrixGauss7x7.close()
+
 
 
 
@@ -1705,6 +1887,11 @@ MatrixGauss.GausBackButton.clicked.connect(gui_BackChooseGauss)
 MatrixGauss.GausButton2x2.clicked.connect(gui_openGauss2x2)
 MatrixGauss.GausButton3x3.clicked.connect(gui_openGauss3x3)
 MatrixGauss.GausButton4x4.clicked.connect(gui_openGauss4x4)
+MatrixGauss.GausButton5x5.clicked.connect(gui_openGauss5x5)
+MatrixGauss.GausButton6x6.clicked.connect(gui_openGauss6x6)
+MatrixGauss.GausButton7x7.clicked.connect(gui_openGauss7x7)
+
+
 
 #gauss 2x2
 MatrixGauss2x2.GausButton.clicked.connect(MatrixGauss2)
@@ -1717,6 +1904,18 @@ MatrixGauss3x3.GausBackButton.clicked.connect(gui_backGauss3x3)
 #gauss 4x4
 MatrixGauss4x4.GausButton.clicked.connect(MatrixGauss4)
 MatrixGauss4x4.GausBackButton.clicked.connect(gui_backGauss4x4)
+
+#gauss 5x5
+MatrixGauss5x5.GausButton.clicked.connect(MatrixGauss5)
+MatrixGauss5x5.GausBackButton.clicked.connect(gui_backGauss5x5)
+
+#gauss 6x6
+MatrixGauss6x6.GausButton.clicked.connect(MatrixGauss6)
+MatrixGauss6x6.GausBackButton.clicked.connect(gui_backGauss6x6)
+
+#gauss 7x7
+MatrixGauss7x7.GausButton.clicked.connect(MatrixGauss7)
+MatrixGauss7x7.GausBackButton.clicked.connect(gui_backGauss7x7)
 
 
 
