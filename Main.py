@@ -16,7 +16,7 @@ from scipy.misc import derivative
 #from CALCULADORA.Graficador import funcion
 from numpy.random import uniform as unif
 
-import Graficador,CalcTrapecio,Rectangulo,calculadora_newton,simpson38,Determinante,Transpuesta,Inversa,Rango,Multiplicacion,Elevado,GausJordan
+import Graficador,CalcTrapecio,Rectangulo,calculadora_newton,simpson38,Determinante,Transpuesta,Inversa,Rango,Multiplicacion,Elevado,GausJordan,CalcMatrizEcuaLinea
 
 
 
@@ -58,9 +58,13 @@ MatrixGauss4x4 = uic.loadUi("MatrisesGauss4x4.ui")
 MatrixGauss5x5 = uic.loadUi("MatrisesGauss5x5.ui")
 MatrixGauss6x6 = uic.loadUi("MatrisesGauss6x6.ui")
 MatrixGauss7x7 = uic.loadUi("MatrisesGauss7x7.ui")
-
+OpMatrixSimple3x3 = uic.loadUi("OpMatrisesSimple3x3.ui")
 ChooseMatriz = uic.loadUi("MatricesChoose.ui")
 MatricesChooseLong = uic.loadUi("MatricesChooseLong.ui")
+
+
+
+
 #FUNCIONES  
 
     #Funcion para separar Entero y Fraccional
@@ -1333,25 +1337,272 @@ def MatrixGauss7():
     ind1,ind2,ind3,ind4,ind5,ind6,ind7)
     MatrixGauss7x7.ResultMatrix.setText(str(GausJordan.result7x7))
 
+def SaveMatrices():
+    if(OpMatrixSimple3x3.num1Entry.toPlainText()!=""):
+        num1 = float(OpMatrixSimple3x3.num1Entry.toPlainText())
+    else:
+        num1= set()
+
+    if(OpMatrixSimple3x3.num2Entry.toPlainText()!=""):
+        num2 = float(OpMatrixSimple3x3.num2Entry.toPlainText())
+    else:
+        num2 = set()
+    
+    if(OpMatrixSimple3x3.num3Entry.toPlainText()!=""):
+        num3 = float(OpMatrixSimple3x3.num3Entry.toPlainText())
+    else:
+        num3= set()
+    
+    if(OpMatrixSimple3x3.num4Entry.toPlainText()!=""):
+        num4 = float(OpMatrixSimple3x3.num4Entry.toPlainText())
+    else:
+        num4= set()
+
+    if(OpMatrixSimple3x3.num5Entry.toPlainText()!=""):
+        num5 = float(OpMatrixSimple3x3.num5Entry.toPlainText())
+    else:
+        num5 = set()
+    
+    if(OpMatrixSimple3x3.num6Entry.toPlainText()!=""):
+        num6 = float(OpMatrixSimple3x3.num6Entry.toPlainText())
+    else:
+        num6 = set()
+    
+    if(OpMatrixSimple3x3.num7Entry.toPlainText()!=""):
+        num7 = float(OpMatrixSimple3x3.num7Entry.toPlainText())
+    else:
+        num7 = set()
+    
+    if(OpMatrixSimple3x3.num8Entry.toPlainText()!=""):
+        num8 = float(OpMatrixSimple3x3.num8Entry.toPlainText())
+    else:
+        num8 = set()
+    
+    if(OpMatrixSimple3x3.num9Entry.toPlainText()!=""):
+        num9 = float(OpMatrixSimple3x3.num9Entry.toPlainText())
+    else:
+        num9 = set()
+    
+    opcion = str(OpMatrixSimple3x3.comboBox.currentText())
+    if(opcion == "A"):
+        if((not bool(num1)==False or num1==0) and (not bool(num4)==False or num4==0) and (not bool(num2)==False or num2==0) and (not bool(num5)==False
+            or num5==0) and not bool(num3)==True and not bool(num6)==True and not bool(num7)==True and not bool(num8)==True and not bool(num9)==True):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,0,num4,num5,0,0,0,0,"2x2")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.A))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and (not bool(num3)==False or num3==0) and (not bool(num4)==False or num4==0) and (not bool(num5)==False or num5==0) 
+        and (not bool(num6)==False or num6==0) and (not bool(num7)==False or num7==0) and (not bool(num8)==False or num8==0) and (not bool(num9)==False or num9==0)):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,num3,num4,num5,num6,num7,num8,num9,"3x3")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.A))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and (not bool(num3)==False) or num3==0 and (not bool(num4)==False or num4==0) and
+        not bool(num5)==False or num5==0 and (not bool(num6)==False or num6==0) and (not bool(num7)==True) and (not bool(num8)==True) and (not bool(num9)==True)):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,num3,num4,num5,num6,0,0,0,"2x3")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.A))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and not bool(num3)==True and (not bool(num4)==False or num4==0) and
+        (not bool(num5)==False or num5==0) and not bool(num6)==True and (not bool(num7)==False or num7==0) and (not bool(num8)==False or num8==0) and not bool(num9)==True):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,0,num4,num5,0,num7,num8,0,"3x2")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.A))
+
+    if(opcion == "B"):
+        if((not bool(num1)==False or num1==0) and (not bool(num4)==False or num4==0) and (not bool(num2)==False or num2==0) and (not bool(num5)==False
+            or num5==0) and not bool(num3)==True and not bool(num6)==True and not bool(num7)==True and not bool(num8)==True and not bool(num9)==True):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,0,num4,num5,0,0,0,0,"2x2")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.B))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and (not bool(num3)==False or num3==0) and (not bool(num4)==False or num4==0) and (not bool(num5)==False or num5==0) 
+        and (not bool(num6)==False or num6==0) and (not bool(num7)==False or num7==0) and (not bool(num8)==False or num8==0) and (not bool(num9)==False or num9==0)):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,num3,num4,num5,num6,num7,num8,num9,"3x3")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.B))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and (not bool(num3)==False) or num3==0 and (not bool(num4)==False or num4==0) and
+        not bool(num5)==False or num5==0 and (not bool(num6)==False or num6==0) and (not bool(num7)==True) and (not bool(num8)==True) and (not bool(num9)==True)):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,num3,num4,num5,num6,0,0,0,"2x3")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.B))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and not bool(num3)==True and (not bool(num4)==False or num4==0) and
+        (not bool(num5)==False or num5==0) and not bool(num6)==True and (not bool(num7)==False or num7==0) and (not bool(num8)==False or num8==0) and not bool(num9)==True):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,0,num4,num5,0,num7,num8,0,"3x2")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.B))
+
+    if(opcion == "C"):
+        if((not bool(num1)==False or num1==0) and (not bool(num4)==False or num4==0) and (not bool(num2)==False or num2==0) and (not bool(num5)==False
+            or num5==0) and not bool(num3)==True and not bool(num6)==True and not bool(num7)==True and not bool(num8)==True and not bool(num9)==True):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,0,num4,num5,0,0,0,0,"2x2")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.C))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and (not bool(num3)==False or num3==0) and (not bool(num4)==False or num4==0) and (not bool(num5)==False or num5==0) 
+        and (not bool(num6)==False or num6==0) and (not bool(num7)==False or num7==0) and (not bool(num8)==False or num8==0) and (not bool(num9)==False or num9==0)):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,num3,num4,num5,num6,num7,num8,num9,"3x3")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.C))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and (not bool(num3)==False) or num3==0 and (not bool(num4)==False or num4==0) and
+        not bool(num5)==False or num5==0 and (not bool(num6)==False or num6==0) and (not bool(num7)==True) and (not bool(num8)==True) and (not bool(num9)==True)):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,num3,num4,num5,num6,0,0,0,"2x3")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.C))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and not bool(num3)==True and (not bool(num4)==False or num4==0) and
+        (not bool(num5)==False or num5==0) and not bool(num6)==True and (not bool(num7)==False or num7==0) and (not bool(num8)==False or num8==0) and not bool(num9)==True):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,0,num4,num5,0,num7,num8,0,"3x2")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.C))
+
+    if(opcion == "D"):
+        if((not bool(num1)==False or num1==0) and (not bool(num4)==False or num4==0) and (not bool(num2)==False or num2==0) and (not bool(num5)==False
+            or num5==0) and not bool(num3)==True and not bool(num6)==True and not bool(num7)==True and not bool(num8)==True and not bool(num9)==True):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,0,num4,num5,0,0,0,0,"2x2")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.D))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and (not bool(num3)==False or num3==0) and (not bool(num4)==False or num4==0) and (not bool(num5)==False or num5==0) 
+        and (not bool(num6)==False or num6==0) and (not bool(num7)==False or num7==0) and (not bool(num8)==False or num8==0) and (not bool(num9)==False or num9==0)):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,num3,num4,num5,num6,num7,num8,num9,"3x3")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.D))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and (not bool(num3)==False) or num3==0 and (not bool(num4)==False or num4==0) and
+        not bool(num5)==False or num5==0 and (not bool(num6)==False or num6==0) and (not bool(num7)==True) and (not bool(num8)==True) and (not bool(num9)==True)):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,num3,num4,num5,num6,0,0,0,"2x3")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.D))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and not bool(num3)==True and (not bool(num4)==False or num4==0) and
+        (not bool(num5)==False or num5==0) and not bool(num6)==True and (not bool(num7)==False or num7==0) and (not bool(num8)==False or num8==0) and not bool(num9)==True):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,0,num4,num5,0,num7,num8,0,"3x2")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.D))
+
+    if(opcion == "E"):
+        if((not bool(num1)==False or num1==0) and (not bool(num4)==False or num4==0) and (not bool(num2)==False or num2==0) and (not bool(num5)==False
+            or num5==0) and not bool(num3)==True and not bool(num6)==True and not bool(num7)==True and not bool(num8)==True and not bool(num9)==True):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,0,num4,num5,0,0,0,0,"2x2")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.E))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and (not bool(num3)==False or num3==0) and (not bool(num4)==False or num4==0) and (not bool(num5)==False or num5==0) 
+        and (not bool(num6)==False or num6==0) and (not bool(num7)==False or num7==0) and (not bool(num8)==False or num8==0) and (not bool(num9)==False or num9==0)):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,num3,num4,num5,num6,num7,num8,num9,"3x3")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.E))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and (not bool(num3)==False) or num3==0 and (not bool(num4)==False or num4==0) and
+        not bool(num5)==False or num5==0 and (not bool(num6)==False or num6==0) and (not bool(num7)==True) and (not bool(num8)==True) and (not bool(num9)==True)):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,num3,num4,num5,num6,0,0,0,"2x3")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.E))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and not bool(num3)==True and (not bool(num4)==False or num4==0) and
+        (not bool(num5)==False or num5==0) and not bool(num6)==True and (not bool(num7)==False or num7==0) and (not bool(num8)==False or num8==0) and not bool(num9)==True):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,0,num4,num5,0,num7,num8,0,"3x2")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.E))
+
+    if(opcion == "F"):
+        if((not bool(num1)==False or num1==0) and (not bool(num4)==False or num4==0) and (not bool(num2)==False or num2==0) and (not bool(num5)==False
+            or num5==0) and not bool(num3)==True and not bool(num6)==True and not bool(num7)==True and not bool(num8)==True and not bool(num9)==True):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,0,num4,num5,0,0,0,0,"2x2")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.F))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and (not bool(num3)==False or num3==0) and (not bool(num4)==False or num4==0) and (not bool(num5)==False or num5==0) 
+        and (not bool(num6)==False or num6==0) and (not bool(num7)==False or num7==0) and (not bool(num8)==False or num8==0) and (not bool(num9)==False or num9==0)):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,num3,num4,num5,num6,num7,num8,num9,"3x3")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.F))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and (not bool(num3)==False) or num3==0 and (not bool(num4)==False or num4==0) and
+        not bool(num5)==False or num5==0 and (not bool(num6)==False or num6==0) and (not bool(num7)==True) and (not bool(num8)==True) and (not bool(num9)==True)):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,num3,num4,num5,num6,0,0,0,"2x3")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.F))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and not bool(num3)==True and (not bool(num4)==False or num4==0) and
+        (not bool(num5)==False or num5==0) and not bool(num6)==True and (not bool(num7)==False or num7==0) and (not bool(num8)==False or num8==0) and not bool(num9)==True):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,0,num4,num5,0,num7,num8,0,"3x2")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.F))
+
+    if(opcion == "G"):
+        if((not bool(num1)==False or num1==0) and (not bool(num4)==False or num4==0) and (not bool(num2)==False or num2==0) and (not bool(num5)==False
+            or num5==0) and not bool(num3)==True and not bool(num6)==True and not bool(num7)==True and not bool(num8)==True and not bool(num9)==True):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,0,num4,num5,0,0,0,0,"2x2")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.G))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and (not bool(num3)==False or num3==0) and (not bool(num4)==False or num4==0) and (not bool(num5)==False or num5==0) 
+        and (not bool(num6)==False or num6==0) and (not bool(num7)==False or num7==0) and (not bool(num8)==False or num8==0) and (not bool(num9)==False or num9==0)):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,num3,num4,num5,num6,num7,num8,num9,"3x3")
+            OpMatrixSimple3x3.ResultMatriMatrix.setText(str(CalcMatrizEcuaLinea.G))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and (not bool(num3)==False) or num3==0 and (not bool(num4)==False or num4==0) and
+        not bool(num5)==False or num5==0 and (not bool(num6)==False or num6==0) and (not bool(num7)==True) and (not bool(num8)==True) and (not bool(num9)==True)):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,num3,num4,num5,num6,0,0,0,"2x3")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.G))
+        elif((not bool(num1)==False or num1==0) and (not bool(num2)==False or num2==0) and not bool(num3)==True and (not bool(num4)==False or num4==0) and
+        (not bool(num5)==False or num5==0) and not bool(num6)==True and (not bool(num7)==False or num7==0) and (not bool(num8)==False or num8==0) and not bool(num9)==True):
+            CalcMatrizEcuaLinea.matrices(opcion,num1,num2,0,num4,num5,0,num7,num8,0,"3x2")
+            OpMatrixSimple3x3.Matrix.setText(str(CalcMatrizEcuaLinea.G))
+
+def CalcMatrix():
+    ecuacion = OpMatrixSimple3x3.EcEntry.toPlainText()
+    ecuacionAux = str(ecuacion)
+    if(any(c == "A" for c in ecuacionAux)==True and any(c == "B" for c in ecuacionAux)==False and any(c == "C" for c in ecuacionAux)==False
+        and any(c == "D" for c in ecuacionAux)==False and any(c == "E" for c in ecuacionAux)==False and any(c == "F" for c in ecuacionAux)==False
+        and any(c == "G" for c in ecuacionAux)==False):
+            A = CalcMatrizEcuaLinea.A
+            try:
+                resp = eval(ecuacionAux)
+                OpMatrixSimple3x3.ResultMatrix.setText(str(resp))
+            except Exception as e:
+                OpMatrixSimple3x3.ResultMatrix.setText(str("Error no se puede la operacion, revise las matrices"))
+    elif(any(c == "A" for c in ecuacionAux)==True and any(c == "B" for c in ecuacionAux)==True and any(c == "C" for c in ecuacionAux)==False
+        and any(c == "D" for c in ecuacionAux)==False and any(c == "E" for c in ecuacionAux)==False and any(c == "F" for c in ecuacionAux)==False
+        and any(c == "G" for c in ecuacionAux)==False):
+            A = CalcMatrizEcuaLinea.A
+            B = CalcMatrizEcuaLinea.B
+            try:
+                resp = eval(ecuacionAux)
+                OpMatrixSimple3x3.ResultMatrix.setText(str(resp))
+            except Exception as e:
+                OpMatrixSimple3x3.ResultMatrix.setText(str("Error no se puede la operacion, revise las matrices"))
+    elif(any(c == "A" for c in ecuacionAux)==True and any(c == "B" for c in ecuacionAux)==True and any(c == "C" for c in ecuacionAux)==True
+        and any(c == "D" for c in ecuacionAux)==False and any(c == "E" for c in ecuacionAux)==False and any(c == "F" for c in ecuacionAux)==False
+        and any(c == "G" for c in ecuacionAux)==False):
+            A = CalcMatrizEcuaLinea.A
+            B = CalcMatrizEcuaLinea.B
+            C = CalcMatrizEcuaLinea.C
+            try:
+                resp = eval(ecuacionAux)
+                OpMatrixSimple3x3.ResultMatrix.setText(str(resp))
+            except Exception as e:
+                OpMatrixSimple3x3.ResultMatrix.setText(str("Error no se puede la operacion, revise las matrices"))
+    elif(any(c == "A" for c in ecuacionAux)==True and any(c == "B" for c in ecuacionAux)==True and any(c == "C" for c in ecuacionAux)==True
+        and any(c == "D" for c in ecuacionAux)==True and any(c == "E" for c in ecuacionAux)==False and any(c == "F" for c in ecuacionAux)==False
+        and any(c == "G" for c in ecuacionAux)==False):
+            A = CalcMatrizEcuaLinea.A
+            B = CalcMatrizEcuaLinea.B
+            C = CalcMatrizEcuaLinea.C
+            D = CalcMatrizEcuaLinea.D
+            try:
+                resp = eval(ecuacionAux)
+                OpMatrixSimple3x3.ResultMatrix.setText(str(resp))
+            except Exception as e:
+                OpMatrixSimple3x3.ResultMatrix.setText(str("Error no se puede la operacion, revise las matrices"))
+    elif(any(c == "A" for c in ecuacionAux)==True and any(c == "B" for c in ecuacionAux)==True and any(c == "C" for c in ecuacionAux)==True
+        and any(c == "D" for c in ecuacionAux)==True and any(c == "E" for c in ecuacionAux)==True and any(c == "F" for c in ecuacionAux)==False
+        and any(c == "G" for c in ecuacionAux)==False):
+            A = CalcMatrizEcuaLinea.A
+            B = CalcMatrizEcuaLinea.B
+            C = CalcMatrizEcuaLinea.C
+            D = CalcMatrizEcuaLinea.D
+            E = CalcMatrizEcuaLinea.E
+            try:
+                resp = eval(ecuacionAux)
+                OpMatrixSimple3x3.ResultMatrix.setText(str(resp))
+            except Exception as e:
+                OpMatrixSimple3x3.ResultMatrix.setText(str("Error no se puede la operacion, revise las matrices"))
+    elif(any(c == "A" for c in ecuacionAux)==True and any(c == "B" for c in ecuacionAux)==True and any(c == "C" for c in ecuacionAux)==True
+        and any(c == "D" for c in ecuacionAux)==True and any(c == "E" for c in ecuacionAux)==True and any(c == "F" for c in ecuacionAux)==True
+        and any(c == "G" for c in ecuacionAux)==False):
+            A = CalcMatrizEcuaLinea.A
+            B = CalcMatrizEcuaLinea.B
+            C = CalcMatrizEcuaLinea.C
+            D = CalcMatrizEcuaLinea.D
+            E = CalcMatrizEcuaLinea.E
+            F = CalcMatrizEcuaLinea.F
+            try:
+                resp = eval(ecuacionAux)
+                OpMatrixSimple3x3.ResultMatrix.setText(str(resp))
+            except Exception as e:
+                OpMatrixSimple3x3.ResultMatrix.setText(str("Error no se puede la operacion, revise las matrices"))
+    elif(any(c == "A" for c in ecuacionAux)==True and any(c == "B" for c in ecuacionAux)==True and any(c == "C" for c in ecuacionAux)==True
+        and any(c == "D" for c in ecuacionAux)==True and any(c == "E" for c in ecuacionAux)==True and any(c == "F" for c in ecuacionAux)==True
+        and any(c == "G" for c in ecuacionAux)==True):
+        A = CalcMatrizEcuaLinea.A
+        B = CalcMatrizEcuaLinea.B
+        C = CalcMatrizEcuaLinea.C
+        D = CalcMatrizEcuaLinea.D
+        E = CalcMatrizEcuaLinea.E
+        F = CalcMatrizEcuaLinea.F
+        G = CalcMatrizEcuaLinea.F
+        try:
+            resp = eval(ecuacionAux)
+            OpMatrixSimple3x3.ResultMatrix.setText(str(resp))
+        except Exception as e:
+            OpMatrixSimple3x3.ResultMatrix.setText(str("Error no se puede la operacion, revise las matrices"))
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-#BOTONES
 
     #Main Buttons
 def gui_Start():
@@ -1748,6 +1999,18 @@ def gui_backGauss7x7():
     MatrixGauss.show()
     MatrixGauss7x7.close()
 
+#OPERACIONES CON MATRICES
+def gui_closeOperacionesMatricez():
+    ChooseMatriz.show()
+    OpMatrixSimple3x3.close()
+
+def gui_openOperacionesMatricez():
+    ChooseMatriz.close()
+    OpMatrixSimple3x3.show()
+
+
+    
+
 
 
 
@@ -1857,6 +2120,7 @@ ChooseMatriz.ChoseMaBackButton.clicked.connect(gui_BackbtnMatriz)
 
 #longitud de matricez
 ChooseMatriz.btnOpSimples.clicked.connect(gui_LongMatrices)
+ChooseMatriz.btnOpSimples2.clicked.connect(gui_openOperacionesMatricez)
 MatricesChooseLong.ChoseMaBackButton.clicked.connect(gui_BackLongMatrices)
 MatricesChooseLong.M2x2.clicked.connect(gui_Matricez1op)
 MatricesChooseLong.M3x3.clicked.connect(gui_Matricez3x3)
@@ -1916,6 +2180,12 @@ MatrixGauss6x6.GausBackButton.clicked.connect(gui_backGauss6x6)
 #gauss 7x7
 MatrixGauss7x7.GausButton.clicked.connect(MatrixGauss7)
 MatrixGauss7x7.GausBackButton.clicked.connect(gui_backGauss7x7)
+
+#operaciones con matricez 
+OpMatrixSimple3x3.comboBox.activated[str].connect(SaveMatrices)
+OpMatrixSimple3x3.CalcButton.clicked.connect(CalcMatrix)
+OpMatrixSimple3x3.BackButton.clicked.connect(gui_closeOperacionesMatricez)
+
 
 
 

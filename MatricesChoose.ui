@@ -50,7 +50,7 @@ border-radius:30px;
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>130</x>
       <y>10</y>
       <width>241</width>
       <height>61</height>
@@ -85,9 +85,9 @@ border-radius:20px;</string>
    <widget class="QPushButton" name="btnOpSimples2">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>100</y>
-      <width>171</width>
+      <x>90</x>
+      <y>150</y>
+      <width>321</width>
       <height>41</height>
      </rect>
     </property>
@@ -96,15 +96,15 @@ border-radius:20px;</string>
 border-radius:20px;</string>
     </property>
     <property name="text">
-     <string>op 2 matriz </string>
+     <string>Operaciones 2 matriz  </string>
     </property>
    </widget>
    <widget class="QPushButton" name="btnOpSimples">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>90</x>
       <y>100</y>
-      <width>171</width>
+      <width>321</width>
       <height>41</height>
      </rect>
     </property>
@@ -113,7 +113,7 @@ border-radius:20px;</string>
 border-radius:20px;</string>
     </property>
     <property name="text">
-     <string>Op 1 matriz</string>
+     <string>Operaciones 1 matriz</string>
     </property>
    </widget>
   </widget>
