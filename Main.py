@@ -16,7 +16,7 @@ from scipy.misc import derivative
 #from CALCULADORA.Graficador import funcion
 from numpy.random import uniform as unif
 
-import Graficador,CalcTrapecio,Rectangulo,calculadora_newton,simpson38,Determinante,Transpuesta,Inversa,Rango,Multiplicacion,Elevado,GausJordan,CalcMatrizEcuaLinea
+import Graficador,CalcTrapecio,Rectangulo,calculadora_newton,simpson38,Determinante,Transpuesta,Inversa,Rango,Multiplicacion,Elevado,GausJordan,CalcMatrizEcuaLinea,montecarlo,AjusteCurvas
 
 
 
@@ -61,6 +61,7 @@ MatrixGauss7x7 = uic.loadUi("MatrisesGauss7x7.ui")
 OpMatrixSimple3x3 = uic.loadUi("OpMatrisesSimple3x3.ui")
 ChooseMatriz = uic.loadUi("MatricesChoose.ui")
 MatricesChooseLong = uic.loadUi("MatricesChooseLong.ui")
+AjusteDeCurvas = uic.loadUi("ajusteDcurvas.ui")
 
 
 
@@ -960,29 +961,15 @@ def CSimpson38():
     Simpson38.ResultIntegral.setText(str(simpson38.suma))
     Simpson38.ResultError.setText(str(simpson38.errorporcent))
 
-def montecarlo():
-    Funcion = list (Montecarlo.FuncionEntry.toPlainText())
+def Fmontecarlo():
+    Funcion = str (Montecarlo.FuncionEntry.toPlainText())
     a       = float(Montecarlo.ExtIzqEntry.toPlainText())
     b       = float(Montecarlo.ExtDerEntry.toPlainText())
     n       = int(Montecarlo.ParticionesEntry.toPlainText())
 
-    e = np.linspace(a,b,0.1)
-    x = unif(a,b,n) 
-    
-
-    expr = "".join(Funcion)
-    f = sympify(expr)
-    suma = 0
-
-    
-
-    for i in range(n):
-        evalu = x[i]
-        suma = suma + f.evalf(subs = {"e" : evalu})
-
-    resultado = (b-a)*suma/n 
-
-    Montecarlo.ResultIntegral.setText(str(resultado))
+    montecarlo.f(Funcion)
+    montecarlo.MFuncion(a,b,n)
+    Montecarlo.ResultIntegral.setText(str(montecarlo.resultado))
 
 def MatrixDeterminante():
     num1 = float(MatrixSimple.num1Entry.toPlainText())
@@ -1598,7 +1585,36 @@ def CalcMatrix():
         except Exception as e:
             OpMatrixSimple3x3.ResultMatrix.setText(str("Error no se puede la operacion, revise las matrices"))
 
+def SaveAjusteCurvas():
+    xn = float(AjusteDeCurvas.EntryX.toPlainText())
+    yn = float(AjusteDeCurvas.EntryY.toPlainText())
 
+    AjusteCurvas.DeArray(xn,yn)
+
+    AjusteDeCurvas.ArrayX.setText(str(AjusteCurvas.x))
+    AjusteDeCurvas.ArrayY.setText(str(AjusteCurvas.y))
+
+def AjustarCuerva():
+    AjusteCurvas.AjustarCurva(1)
+    AjusteDeCurvas.Grado1Result.setText(str(AjusteCurvas.p))
+
+    AjusteCurvas.AjustarCurva(2)
+    AjusteDeCurvas.Grado2Result.setText(str(AjusteCurvas.p))
+
+    AjusteCurvas.AjustarCurva(3)
+    AjusteDeCurvas.Grado3Result.setText(str(AjusteCurvas.p))
+
+    AjusteCurvas.AjustarCurva(4)
+    AjusteDeCurvas.Grado4Result.setText(str(AjusteCurvas.p))
+
+    AjusteCurvas.AjustarCurva(5)
+    AjusteDeCurvas.Grado5Result.setText(str(AjusteCurvas.p))
+
+    AjusteCurvas.AjustarCurva(6)
+    AjusteDeCurvas.Grado6Result.setText(str(AjusteCurvas.p))
+
+    
+    
 
 
 
@@ -1869,7 +1885,7 @@ def gui_Montecarlo():
     Montecarlo.show()
 
 def Btn_CalculateMontecarlo():
-    montecarlo()
+    Fmontecarlo()
 
 def gui_BackBtnMontecarlo():
     Montecarlo.close()
@@ -2007,6 +2023,15 @@ def gui_closeOperacionesMatricez():
 def gui_openOperacionesMatricez():
     ChooseMatriz.close()
     OpMatrixSimple3x3.show()
+
+#Ajuste de curvas 
+def gui_openAjustes():
+    Choose.close()
+    AjusteDeCurvas.show()
+
+def gui_closeAjustes():
+    Choose.show()
+    AjusteDeCurvas.close()
 
 
     
@@ -2186,6 +2211,11 @@ OpMatrixSimple3x3.comboBox.activated[str].connect(SaveMatrices)
 OpMatrixSimple3x3.CalcButton.clicked.connect(CalcMatrix)
 OpMatrixSimple3x3.BackButton.clicked.connect(gui_closeOperacionesMatricez)
 
+#ajustes de curvas
+Choose.AjusteButton.clicked.connect(gui_openAjustes)
+AjusteDeCurvas.AjustBackButton.clicked.connect(gui_closeAjustes)
+AjusteDeCurvas.BtnGuardar.clicked.connect(SaveAjusteCurvas)
+AjusteDeCurvas.CalculateButton.clicked.connect(AjustarCuerva)
 
 
 

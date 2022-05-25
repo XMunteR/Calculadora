@@ -17,7 +17,7 @@ def GaussJordan2x3(num1,num2,num4,num5,ind1,ind2):
 
     for i in range(n):
         if a[i][i] == 0.0:
-            result2x2('Error...Division por cero')
+            result2x2= str('Error...Division por cero')
 
         for j in range(n):
             if i != j:
@@ -80,7 +80,7 @@ def GaussJordan3x4(num1,num2,num3,num4,num5,num6,num7,num8,num9,ind1,ind2,ind3):
      result = ('X%d = %0.5f' %(i,x[i]))
      arreglo.append(str(result))
      
-    result3x3 = arreglo[0:2]
+    result3x3 = arreglo[0:3]
     return result3x3
 
 def GaussJordan4x5(num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num12,num13
@@ -135,7 +135,7 @@ def GaussJordan4x5(num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num1
      result = ('X%d = %0.5f' %(i,x[i]))
      arreglo.append(str(result))
      
-    result4x4 = arreglo[0:2]
+    result4x4 = arreglo[0:4]
     return result4x4
 
 def GaussJordan5x6(num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num12,num13
@@ -202,7 +202,7 @@ def GaussJordan5x6(num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num1
      result = ('X%d = %0.5f' %(i,x[i]))
      arreglo.append(str(result))
      
-    result5x5 = arreglo[0:2]
+    result5x5 = arreglo[0:5]
     return result5x5
 
 def GaussJordan6x7(num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num12,num13
@@ -283,7 +283,7 @@ def GaussJordan6x7(num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num1
      result = ('X%d = %0.5f' %(i,x[i]))
      arreglo.append(str(result))
      
-    result6x6 = arreglo[0:2]
+    result6x6 = arreglo[0:6]
     return result6x6
 
 def GaussJordan7x8(num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num12,num13
@@ -380,5 +380,5 @@ def GaussJordan7x8(num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num1
      result = ('X%d = %0.5f' %(i,x[i]))
      arreglo.append(str(result))
      
-    result7x7 = arreglo[0:2]
+    result7x7 = arreglo[0:7]
     return result7x7
