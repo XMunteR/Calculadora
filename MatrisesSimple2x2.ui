@@ -280,25 +280,6 @@ border-radius:20px;</string>
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
-   <widget class="QLabel" name="ResultMatrix">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>270</y>
-      <width>261</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font{
-50px
-arial
-}</string>
-    </property>
-    <property name="text">
-     <string>...</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="GausButton">
     <property name="geometry">
      <rect>
@@ -314,6 +295,19 @@ border-radius:20px;</string>
     </property>
     <property name="text">
      <string>GaussJodan</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="ResultMatrix">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>250</y>
+      <width>241</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
   </widget>

@@ -50,6 +50,8 @@ Graficadora = uic.loadUi("Graficador.ui")
 Montecarlo = uic.loadUi("Montecarlo.ui")
 Rectangulos = uic.loadUi("Rectangulo.ui")
 MatrixSimple = uic.loadUi("MatrisesSimple2x2.ui")
+MatrixSimple2x3 = uic.loadUi("MatrisesSimple2x3.ui")
+MatrixSimple3x2 = uic.loadUi("MatrisesSimple3x2.ui")
 MatrixSimple3x3 = uic.loadUi("MatrisesSimple3x3.ui")
 MatrixGauss = uic.loadUi("MatrisesGauss.ui")
 MatrixGauss2x2 = uic.loadUi("MatrisesGauss2x2.ui")
@@ -1169,7 +1171,7 @@ def MatrixGauss4():
     
     GausJordan.GaussJordan4x5(num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,
     num11,num13,num12,num14,num15,num16,ind1,ind2,ind3,ind4)
-    MatrixGauss3x3.ResultMatrix.setText(str(GausJordan.result4x4))
+    MatrixGauss4x4.ResultMatrix.setText(str(GausJordan.result4x4))
 
 def MatrixGauss5():
     num1 = float(MatrixGauss5x5.num1Entry.toPlainText())
@@ -1942,6 +1944,8 @@ def gui_backMatricez1op():
 def Btn_1Matricez():
     MatrixDeterminante()
 
+
+
 #matriz 3x3
 def gui_Matricez3x3():
     ChooseMatriz.close()
@@ -2160,6 +2164,9 @@ MatrixSimple.RanCalcButton.clicked.connect(MatrixRango)
 MatrixSimple.MultCalcButton.clicked.connect(MatrixMult)
 MatrixSimple.ElevCalcButton.clicked.connect(MatrixElev)
 MatrixSimple.GausButton.clicked.connect(gui_openGaus2)
+
+
+
 
 #3x3
 MatrixSimple3x3.MatBackButton.clicked.connect(Gui_backMaatriz3x3)
