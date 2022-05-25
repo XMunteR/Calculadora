@@ -1615,6 +1615,8 @@ def AjustarCuerva():
     AjusteCurvas.AjustarCurva(6)
     AjusteDeCurvas.Grado6Result.setText(str(AjusteCurvas.p))
 
+    AjusteCurvas.grafica()
+
     
     
 
